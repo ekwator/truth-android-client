@@ -1,7 +1,9 @@
 package com.truth.training.client.data
 
 import android.content.Context
+import com.truth.training.client.BuildConfig
 import com.truth.training.client.data.network.NetworkModule
+import com.truth.training.client.data.network.MockTruthApi
 import com.truth.training.client.data.network.TokenStorage
 import com.truth.training.client.data.network.dto.AuthRequest
 import com.truth.training.client.data.network.dto.InfoResponse
@@ -12,11 +14,15 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class TruthRepository(context: Context) {
     private val tokenStorage = TokenStorage(context)
-    private val api = NetworkModule.provideApi(
-        NetworkModule.provideRetrofit(
-            NetworkModule.provideOkHttp(context, tokenStorage)
+    private val api = if (BuildConfig.FLAVOR == "mock") {
+        MockTruthApi(context)
+    } else {
+        NetworkModule.provideApi(
+            NetworkModule.provideRetrofit(
+                NetworkModule.provideOkHttp(context, tokenStorage)
+            )
         )
-    )
+    }
 
     private val _lastSync = MutableStateFlow<Long?>(null)
     val lastSync: Flow<Long?> = _lastSync.asStateFlow()

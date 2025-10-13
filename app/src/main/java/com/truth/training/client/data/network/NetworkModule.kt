@@ -11,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.runBlocking
 
 class TokenStorage(context: Context) {
     private val prefs = context.getSharedPreferences("truth_tokens", Context.MODE_PRIVATE)
@@ -64,7 +65,7 @@ class RefreshAuthenticator(
                     .build()
                 val api = retrofit.create(TruthApi::class.java)
                 try {
-                    val refreshResp = api.refreshToken()
+                    val refreshResp = runBlocking { api.refreshToken() }
                     if (refreshResp.isSuccessful) {
                         val body = refreshResp.body()
                         if (body != null) {

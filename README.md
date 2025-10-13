@@ -27,3 +27,8 @@ Truth Android Client (v0.1.0-pre)
 
 Примечания по интеграции:
 - Доп. материалы см. в `truthcore_api/api_reference_link.md` и в репозитории Truth Core.
+
+Mock-сборка:
+- Запуск: `./gradlew assembleMockDebug`
+- Источники: `app/src/mock/assets/api/*.json`
+- Реализация: `MockTruthApi`, включается при flavor `mock`.

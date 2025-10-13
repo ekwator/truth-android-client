@@ -56,6 +56,11 @@ android {
             dimension = "env"
             buildConfigField("String", "BASE_URL", "\"https://truth-core.example.com\"")
         }
+        create("mock") {
+            dimension = "env"
+            buildConfigField("String", "BASE_URL", "\"http://mock\"")
+            buildConfigField("boolean", "MOCK_ENABLED", "true")
+        }
     }
 }
 
