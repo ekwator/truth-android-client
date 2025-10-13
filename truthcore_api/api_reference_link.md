@@ -1,7 +1,8 @@
 # Linked API Reference
+# Truth Core API Reference
+External documentation for Truth Training Core (v0.3.0):
 
-This Android client relies on the Truth Core API documentation:
-https://github.com/ekwator/truth-core/blob/main/docs/api_reference/API_REFERENCE.md
+https://github.com/ekwator/truth-training/blob/master/docs/api_reference/API_REFERENCE.md
 
 For local development, mock data can be found in:
-https://github.com/ekwator/truth-core/tree/main/integration/android/sample_responses
+https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses

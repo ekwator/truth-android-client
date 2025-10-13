@@ -1,6 +1,26 @@
 context:
   include:
+    # Локальные файлы, которые содержат описание Android-проекта
     - "README_ANDROID.md"
     - "truthcore_api/api_reference_link.md"
+
   references:
-    - "https://github.com/ekwator/truth-core/blob/main/docs/api_reference/API_REFERENCE.md"
+    # Основная документация по API из ядра Truth Core
+    - "https://github.com/ekwator/truth-training/blob/master/docs/api_reference/API_REFERENCE.md"
+
+    # Руководство по интеграции Android (из ядра)
+    - "https://github.com/ekwator/truth-training/blob/master/integration/android/README_INTEGRATION.md"
+
+    # Примеры ответов API для локальных тестов
+    - "https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses/info.json"
+    - "https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses/stats.json"
+    - "https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses/graph.json"
+
+  aliases:
+    # Псевдонимы, чтобы Cursor мог понимать связь между терминами
+    truth-core: "https://github.com/ekwator/truth-training"
+    truth-training: "https://github.com/ekwator/truth-training"
+
+  fallback:
+    # На случай, если интернет недоступен — Cursor будет ссылаться на локальные файлы
+    - "truthcore_api/api_reference_link.md"
