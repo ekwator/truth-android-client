@@ -1,0 +1,6 @@
+context:
+  include:
+    - "README_ANDROID.md"
+    - "truthcore_api/api_reference_link.md"
+  references:
+    - "https://github.com/ekwator/truth-core/blob/main/docs/api_reference/API_REFERENCE.md"
