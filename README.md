@@ -38,3 +38,14 @@ Mock-сборка:
   - Sync Peers, Submit Claim, Get Claims, Analyze Text, Get Stats
 - Ответы отображаются как JSON на экране
 - Пример запроса: `{"action":"get_stats"}`
+
+Local P2P Discovery:
+- Обнаружение пиров через NSD (`_truthnode._tcp.`), запуск локального сервера и обмен JSON.
+- Экран `P2PActivity`: список пиров (LAN), отправка ping/произвольного JSON, вывод ответа.
+- Требования: устройства в одной Wi‑Fi сети; разрешения сети в `AndroidManifest.xml`.
+
+Secure P2P Messaging:
+- Генерация RSA-ключей в Android Keystore (alias `truth_node_key`, 2048-bit)
+- Каждое исходящее сообщение подписывается и содержит поля `signature` и `public_key` (Base64)
+- Сервер проверяет подпись; при недействительной подписи отвечает `{ "status": "error", "reason": "invalid_signature" }`
+- На экране `P2PActivity` показывается окончание публичного ключа для быстрой идентификации
