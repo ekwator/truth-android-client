@@ -39,21 +39,20 @@ class P2PServer(private val scope: CoroutineScope) {
                 val requestJson = line.trim()
                 val response = try {
                     val req = JSONObject(requestJson)
+                    val payload = req.optJSONObject("payload") ?: JSONObject()
                     val signature = req.optString("signature", "")
                     val pubKeyB64 = req.optString("public_key", "")
                     if (signature.isBlank() || pubKeyB64.isBlank()) {
                         JSONObject(mapOf("status" to "error", "reason" to "missing_signature")).toString()
                     } else {
-                        // Проверяем подпись на канонизованной форме без поля signature
-                        val copy = JSONObject(req.toString())
-                        copy.remove("signature")
-                        val canonical = copy.toString()
+                        // Проверяем подпись на payload как чистом JSON
+                        val canonical = payload.toString()
                         val pub = Ed25519CryptoManager.decodePublicKeyFromBase64(pubKeyB64)
                         val ok = Ed25519CryptoManager.verifySignature(pub, canonical, signature)
                         if (!ok) {
                             JSONObject(mapOf("status" to "error", "reason" to "invalid_signature")).toString()
                         } else {
-                            val result = TruthCore.processJson(copy.toString())
+                            val result = TruthCore.processJson(payload.toString())
                             val base = if (result.isBlank()) JSONObject(mapOf("status" to "ok")) else JSONObject(result)
                             base.put("verified", true)
                             base.toString()

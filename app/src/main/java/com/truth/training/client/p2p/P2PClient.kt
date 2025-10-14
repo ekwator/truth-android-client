@@ -13,18 +13,20 @@ import org.json.JSONObject
 
 object P2PClient {
     suspend fun send(context: Context, host: String, port: Int, json: String, timeoutMs: Int = 5000): String = withContext(Dispatchers.IO) {
+        Ed25519CryptoManager.init(context)
         val payload = JSONObject(json)
-        val canonical = payload.toString()
-        val keyPair = Ed25519CryptoManager.loadOrCreateKeys(context)
-        val signature = Ed25519CryptoManager.signMessage(keyPair.private, canonical)
-        payload.put("signature", signature)
-        payload.put("public_key", Ed25519CryptoManager.getPublicKeyBase64(context))
+        val signature = Ed25519CryptoManager.signJsonPayload(payload)
+        val envelope = JSONObject().apply {
+            put("payload", payload)
+            put("signature", signature)
+            put("public_key", Ed25519CryptoManager.getPublicKeyBase64())
+        }
         val socket = Socket()
         try {
             socket.connect(InetSocketAddress(host, port), timeoutMs)
             val writer = PrintWriter(socket.getOutputStream(), true)
             val reader = BufferedReader(InputStreamReader(socket.getInputStream()))
-            writer.println(payload.toString())
+            writer.println(envelope.toString())
             writer.flush()
             reader.readLine() ?: ""
         } finally {

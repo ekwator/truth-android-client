@@ -50,12 +50,11 @@ Secure P2P Messaging:
 - Сервер проверяет подпись; при недействительной подписи отвечает `{ "status": "error", "reason": "invalid_signature" }`
 - На экране `P2PActivity` показывается окончание публичного ключа для быстрой идентификации
 
-Secure Communication with Truth Core:
-- Подпись Ed25519 (BouncyCastle), единая для Android/Rust
-- Пример тела запроса `/api/v1/push`:
+Ed25519 JSON Signatures:
+- Подпись Ed25519 (BouncyCastle), единая для Android/Rust; Base64 без паддинга
+- Пример конверта `/api/v1/push` и P2P:
 ```json
 {
-  "node_id": "<android_device_id>",
   "payload": { "event": "truth_claim", "value": 1 },
   "signature": "<base64>",
   "public_key": "<base64>"
@@ -66,5 +65,5 @@ Secure Communication with Truth Core:
 curl -X POST "$BASE_URL/api/v1/push" \
   -H "Authorization: Bearer <jwt>" \
   -H "Content-Type: application/json" \
-  -d '{"node_id":"<id>","payload":{"event":"truth_claim","value":1},"signature":"<b64>","public_key":"<b64>"}'
+  -d '{"payload":{"event":"truth_claim","value":1},"signature":"<b64>","public_key":"<b64>"}'
 ```

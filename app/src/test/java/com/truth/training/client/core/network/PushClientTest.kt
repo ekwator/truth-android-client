@@ -30,7 +30,7 @@ class PushClientTest {
     @Test
     fun send_event_ok() {
         server.enqueue(MockResponse().setResponseCode(200))
-        val body = PushRequest("node", mapOf("event" to "truth_claim"), "sig", "pub")
+        val body = PushEnvelope(mapOf("event" to "truth_claim"), "sig", "pub")
         val resp = kotlinx.coroutines.runBlocking { api.sendEvent("Bearer token", body) }
         assertEquals(true, resp.isSuccessful)
     }

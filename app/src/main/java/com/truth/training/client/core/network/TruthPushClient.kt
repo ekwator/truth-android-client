@@ -4,14 +4,14 @@ import com.truth.training.client.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
+import org.json.JSONObject
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
 
-data class PushRequest(
-    val node_id: String,
+data class PushEnvelope(
     val payload: Map<String, Any>,
     val signature: String,
     val public_key: String
@@ -21,7 +21,7 @@ interface TruthPushApi {
     @POST("/api/v1/push")
     suspend fun sendEvent(
         @Header("Authorization") bearer: String,
-        @Body body: PushRequest
+        @Body body: PushEnvelope
     ): Response<Unit>
 }
 

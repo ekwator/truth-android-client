@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.truth.training.client.core.crypto.Ed25519CryptoManager
-import com.truth.training.client.core.network.PushRequest
+import com.truth.training.client.core.network.PushEnvelope
 import com.truth.training.client.core.network.TruthPushClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,16 +24,16 @@ class PushTestActivity : AppCompatActivity() {
 
         send.setOnClickListener {
             val json = input.text.toString().ifBlank { JSONObject(mapOf("event" to "truth_claim", "value" to 1)).toString() }
-            val kp = Ed25519CryptoManager.loadOrCreateKeys(this)
-            val sig = Ed25519CryptoManager.signMessage(kp.private, json)
-            val pub = Ed25519CryptoManager.getPublicKeyBase64(this)
-            val nodeId = android.provider.Settings.Secure.getString(contentResolver, android.provider.Settings.Secure.ANDROID_ID)
-            val body = PushRequest(nodeId, JSONObject(json).toMap(), sig, pub)
+            Ed25519CryptoManager.init(this)
+            val payloadObj = JSONObject(json)
+            val sig = Ed25519CryptoManager.signJsonPayload(payloadObj)
+            val pub = Ed25519CryptoManager.getPublicKeyBase64()
+            val body = PushEnvelope(payloadObj.toMap(), sig, pub)
             lifecycleScope.launch(Dispatchers.IO) {
                 val bearer = "Bearer " + getSharedPreferences("truth_tokens", MODE_PRIVATE).getString("access", "")
                 val resp = TruthPushClient.api.sendEvent(bearer, body)
                 launch(Dispatchers.Main) {
-                    output.text = "code=${resp.code()} success=${resp.isSuccessful}"
+                    output.text = "sent=${JSONObject().apply{put("payload",payloadObj);put("signature",sig);put("public_key",pub)}}\ncode=${resp.code()} success=${resp.isSuccessful}"
                 }
             }
         }

@@ -27,6 +27,14 @@ object Ed25519CryptoManager {
         return kpg.generateKeyPair()
     }
 
+    @Volatile private var cachedKeys: KeyPair? = null
+
+    fun init(context: Context) {
+        if (cachedKeys == null) synchronized(this) {
+            if (cachedKeys == null) cachedKeys = loadOrCreateKeys(context)
+        }
+    }
+
     fun loadOrCreateKeys(context: Context): KeyPair {
         val prefs = context.getSharedPreferences(KEY_PREFS, Context.MODE_PRIVATE)
         val pubB64 = prefs.getString(PUB, null)
@@ -48,12 +56,14 @@ object Ed25519CryptoManager {
         }
     }
 
+    private fun base64EncodeNoPad(bytes: ByteArray): String = Base64.encodeToString(bytes, Base64.NO_WRAP or Base64.NO_PADDING)
+
     fun signMessage(privateKey: PrivateKey, message: String): String {
         ensureProvider()
         val sig = Signature.getInstance("Ed25519", BouncyCastleProvider.PROVIDER_NAME)
         sig.initSign(privateKey)
         sig.update(message.toByteArray(Charsets.UTF_8))
-        return Base64.encodeToString(sig.sign(), Base64.NO_WRAP)
+        return base64EncodeNoPad(sig.sign())
     }
 
     fun verifySignature(publicKey: PublicKey, message: String, signatureB64: String): Boolean {
@@ -66,9 +76,9 @@ object Ed25519CryptoManager {
         } catch (_: Exception) { false }
     }
 
-    fun getPublicKeyBase64(context: Context): String {
-        val kp = loadOrCreateKeys(context)
-        return Base64.encodeToString(kp.public.encoded, Base64.NO_WRAP)
+    fun getPublicKeyBase64(context: Context? = null): String {
+        val kp = cachedKeys ?: context?.let { loadOrCreateKeys(it) } ?: throw IllegalStateException("Ed25519CryptoManager.init(context) not called")
+        return base64EncodeNoPad(kp.public.encoded)
     }
 
     fun decodePublicKeyFromBase64(b64: String): PublicKey {
@@ -76,6 +86,12 @@ object Ed25519CryptoManager {
         val bytes = Base64.decode(b64, Base64.NO_WRAP)
         val spec = X509EncodedKeySpec(bytes)
         return KeyFactory.getInstance("Ed25519", BouncyCastleProvider.PROVIDER_NAME).generatePublic(spec)
+    }
+
+    fun signJsonPayload(payload: org.json.JSONObject, context: Context? = null): String {
+        val msg = payload.toString()
+        val kp = cachedKeys ?: context?.let { loadOrCreateKeys(it) } ?: throw IllegalStateException("Ed25519CryptoManager.init(context) not called")
+        return signMessage(kp.private, msg)
     }
 }
 
