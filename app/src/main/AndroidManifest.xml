@@ -43,6 +43,10 @@
             android:name=".P2PActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".PushTestActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

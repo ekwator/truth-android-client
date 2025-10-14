@@ -46,14 +46,14 @@ class P2PActivity : AppCompatActivity() {
         val sendBtn = findViewById<Button>(R.id.btnSendJson)
         val output = findViewById<TextView>(R.id.output)
         val pubKeySuffix = findViewById<TextView>(R.id.pubKeySuffix)
-        pubKeySuffix.text = CryptoManager.getPublicKeyBase64().takeLast(8)
+        pubKeySuffix.text = com.truth.training.client.core.crypto.Ed25519CryptoManager.getPublicKeyBase64(this).takeLast(8)
 
         sendBtn.setOnClickListener {
             val list = adapter.items
             if (list.isNotEmpty()) {
                 val (host, port) = list.first()
                 lifecycleScope.launch(Dispatchers.IO) {
-                    val resp = P2PClient.send(host, port, input.text.toString())
+                    val resp = P2PClient.send(this@P2PActivity, host, port, input.text.toString())
                     launch(Dispatchers.Main) { output.text = resp }
                 }
             }
@@ -67,7 +67,7 @@ class P2PActivity : AppCompatActivity() {
         }.toString()
         val output = findViewById<TextView>(R.id.output)
         lifecycleScope.launch(Dispatchers.IO) {
-            val resp = P2PClient.send(host, port, payload)
+            val resp = P2PClient.send(this@P2PActivity, host, port, payload)
             launch(Dispatchers.Main) { output.text = resp }
         }
     }

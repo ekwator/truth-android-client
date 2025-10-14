@@ -7,16 +7,18 @@ import java.io.InputStreamReader
 import java.io.PrintWriter
 import java.net.InetSocketAddress
 import java.net.Socket
-import com.truth.training.client.crypto.CryptoManager
+import android.content.Context
+import com.truth.training.client.core.crypto.Ed25519CryptoManager
 import org.json.JSONObject
 
 object P2PClient {
-    suspend fun send(host: String, port: Int, json: String, timeoutMs: Int = 5000): String = withContext(Dispatchers.IO) {
+    suspend fun send(context: Context, host: String, port: Int, json: String, timeoutMs: Int = 5000): String = withContext(Dispatchers.IO) {
         val payload = JSONObject(json)
         val canonical = payload.toString()
-        val signature = CryptoManager.signMessage(canonical)
+        val keyPair = Ed25519CryptoManager.loadOrCreateKeys(context)
+        val signature = Ed25519CryptoManager.signMessage(keyPair.private, canonical)
         payload.put("signature", signature)
-        payload.put("public_key", CryptoManager.getPublicKeyBase64())
+        payload.put("public_key", Ed25519CryptoManager.getPublicKeyBase64(context))
         val socket = Socket()
         try {
             socket.connect(InetSocketAddress(host, port), timeoutMs)

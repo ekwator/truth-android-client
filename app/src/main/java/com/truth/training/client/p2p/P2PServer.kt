@@ -1,7 +1,7 @@
 package com.truth.training.client.p2p
 
 import com.truth.training.client.TruthCore
-import com.truth.training.client.crypto.CryptoManager
+import com.truth.training.client.core.crypto.Ed25519CryptoManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -48,8 +48,8 @@ class P2PServer(private val scope: CoroutineScope) {
                         val copy = JSONObject(req.toString())
                         copy.remove("signature")
                         val canonical = copy.toString()
-                        val pub = CryptoManager.decodePublicKeyFromBase64(pubKeyB64)
-                        val ok = CryptoManager.verifySignature(canonical, signature, pub)
+                        val pub = Ed25519CryptoManager.decodePublicKeyFromBase64(pubKeyB64)
+                        val ok = Ed25519CryptoManager.verifySignature(pub, canonical, signature)
                         if (!ok) {
                             JSONObject(mapOf("status" to "error", "reason" to "invalid_signature")).toString()
                         } else {
