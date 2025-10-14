@@ -13,10 +13,14 @@ android {
         minSdk = 24
         targetSdk = 35
         versionCode = 1
-        versionName = "0.1.0-pre"
+        versionName = "0.3.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters += listOf("arm64-v8a", "x86_64")
+        }
     }
 
     buildTypes {
@@ -35,6 +39,13 @@ android {
     buildFeatures {
         buildConfig = true
         viewBinding = true
+    }
+
+    packaging {
+        jniLibs.pickFirsts += listOf(
+            "lib/arm64-v8a/libtruthcore.so",
+            "lib/x86_64/libtruthcore.so"
+        )
     }
 
     compileOptions {
