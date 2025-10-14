@@ -32,3 +32,9 @@ Mock-сборка:
 - Запуск: `./gradlew assembleMockDebug`
 - Источники: `app/src/mock/assets/api/*.json`
 - Реализация: `MockTruthApi`, включается при flavor `mock`.
+
+Взаимодействие с Truth Core из Android:
+- Экран `MainDashboardActivity` предоставляет кнопки для действий:
+  - Sync Peers, Submit Claim, Get Claims, Analyze Text, Get Stats
+- Ответы отображаются как JSON на экране
+- Пример запроса: `{"action":"get_stats"}`
