@@ -16,7 +16,7 @@ Truth Android Client (v0.1.0-pre)
   - local: `http://10.0.2.2:8080`
   - remote: замените `https://truth-core.example.com`
 
-Интеграция с Truth Core (v0.3.0):
+Интеграция с Truth Core (current main branch, post-v0.3.0 development):
 - Эндпоинты: POST `/api/v1/auth`, GET `/api/v1/info`, `/api/v1/stats`, `/graph/json`, POST `/api/v1/refresh` (опц.)
 - JWT хранится в SharedPreferences; авторизация через заголовок `Authorization: Bearer <token>`
 
@@ -45,10 +45,11 @@ Local P2P Discovery:
 - Требования: устройства в одной Wi‑Fi сети; разрешения сети в `AndroidManifest.xml`.
 
 Secure P2P Messaging:
-- Генерация RSA-ключей в Android Keystore (alias `truth_node_key`, 2048-bit)
+- Генерация Ed25519-ключей в Android Keystore (alias `truth_node_key`, 2048-bit)
 - Каждое исходящее сообщение подписывается и содержит поля `signature` и `public_key` (Base64)
 - Сервер проверяет подпись; при недействительной подписи отвечает `{ "status": "error", "reason": "invalid_signature" }`
 - На экране `P2PActivity` показывается окончание публичного ключа для быстрой идентификации
+- The Rust core now verifies message signatures (RSA/Ed25519) for all incoming JSON packets from Android before further processing.
 
 Ed25519 JSON Signatures:
 - Подпись Ed25519 (BouncyCastle), единая для Android/Rust; Base64 без паддинга

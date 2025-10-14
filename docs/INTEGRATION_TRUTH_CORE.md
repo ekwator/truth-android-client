@@ -66,3 +66,34 @@ The app can now send JSON-encoded commands to the Truth Core backend.
 - Launch `JsonTestActivity` to test JSON communication
 - Enter JSON request in the input field
 - Tap "Send Request" to get response from Truth Core
+
+## Trusted JSON Message Verification
+
+Since v0.4 development phase, the Rust core validates all incoming JSON messages signed by Android clients.
+
+Each message includes:
+- `payload` — The actual JSON command or data.
+- `signature` — Base64-encoded RSA or Ed25519 signature.
+- `public_key` — Base64 public key (corresponding to the signer).
+
+Example:
+```json
+{
+  "payload": { "action": "push_claim", "value": 42 },
+  "signature": "MEQCIA8f...==",
+  "public_key": "MIIBIjANBgkqh..."
+}
+```
+
+The core performs verification before any semantic processing.
+If verification fails, it returns:
+
+```json
+{ "status": "error", "reason": "invalid_signature" }
+```
+
+Otherwise:
+
+```json
+{ "status": "ok", "trusted": true }
+```

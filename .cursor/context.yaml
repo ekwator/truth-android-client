@@ -5,7 +5,7 @@ context:
     - "truthcore_api/api_reference_link.md"
 
   references:
-    # Основная документация по API из ядра Truth Core
+    # Основная документация по API из ядра Truth Core (master branch, post-v0.3.0)
     - "https://github.com/ekwator/truth-training/blob/master/docs/api_reference/API_REFERENCE.md"
 
     # Руководство по интеграции Android (из ядра)
@@ -15,6 +15,9 @@ context:
     - "https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses/info.json"
     - "https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses/stats.json"
     - "https://github.com/ekwator/truth-training/blob/master/integration/android/sample_responses/graph.json"
+
+    # Документация по доверенным подписям (новая в v0.4.0-pre)
+    - "https://github.com/ekwator/truth-training/blob/master/docs/security/TRUSTED_SIGNATURES.md"
 
   aliases:
     # Псевдонимы, чтобы Cursor мог понимать связь между терминами
