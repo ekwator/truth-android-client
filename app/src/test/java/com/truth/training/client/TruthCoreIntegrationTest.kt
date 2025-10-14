@@ -13,7 +13,8 @@ class TruthCoreIntegrationTest {
             if (action == "submit_claim") obj.put("claim", "demo")
             if (action == "analyze_text") obj.put("text", "demo")
             val payload = obj.toString()
-            assertTrue(payload.contains(action))
+            // Smoke-check: JSON contains the action string
+            assertTrue(payload.indexOf(action) >= 0)
         }
     }
 }
