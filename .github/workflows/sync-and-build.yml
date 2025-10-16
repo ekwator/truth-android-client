@@ -1,0 +1,94 @@
+name: Sync Core Library & Build Android App
+
+on:
+  repository_dispatch:
+    types: [update-libtruth]
+
+env:
+  NATIVE_LIB_PATH: app/src/main/jniLibs/arm64-v8a/libtruth_core.so
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Android Client
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Extract artifact URL from event payload
+        run: echo "ARTIFACT_URL=${{ github.event.client_payload.artifact_url }}" >> $GITHUB_ENV
+
+      - name: Ensure artifact URL provided
+        run: |
+          if [ -z "${ARTIFACT_URL}" ]; then
+            echo "artifact_url is missing in repository_dispatch payload" >&2
+            exit 1
+          fi
+
+      - name: Prepare JNI directories
+        run: mkdir -p app/src/main/jniLibs/arm64-v8a
+
+      - name: Download libtruth_core.so
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          set -euo pipefail
+          if [[ "${ARTIFACT_URL}" == *"github.com"* ]]; then
+            echo "Downloading with GitHub token auth..."
+            curl -fL -H "Authorization: token ${GH_PAT}" -o "${NATIVE_LIB_PATH}" "${ARTIFACT_URL}"
+          else
+            echo "Downloading without auth..."
+            curl -fL -o "${NATIVE_LIB_PATH}" "${ARTIFACT_URL}"
+          fi
+
+      - name: Verify downloaded library
+        run: file "${NATIVE_LIB_PATH}"
+
+      - name: Commit updated library
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "actions@github.com"
+          git remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${GITHUB_REPOSITORY}.git"
+          git add "${NATIVE_LIB_PATH}"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Sync: update libtruth_core.so from truth-training"
+            CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+            git push origin "HEAD:${CURRENT_BRANCH}"
+          fi
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission for Gradle
+        run: chmod +x ./gradlew
+
+      - name: Run Unit Tests
+        run: ./gradlew --no-daemon testDebugUnitTest --stacktrace
+
+      - name: Build Android App (Debug)
+        run: ./gradlew --no-daemon assembleDebug --stacktrace
+
+      - name: Verify APK output
+        run: ls -lh app/build/outputs/apk/debug/
+
+      - name: Upload built APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: truth-android-client-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
