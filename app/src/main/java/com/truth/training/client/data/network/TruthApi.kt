@@ -4,6 +4,7 @@ import com.truth.training.client.data.network.dto.AuthRequest
 import com.truth.training.client.data.network.dto.AuthResponse
 import com.truth.training.client.data.network.dto.InfoResponse
 import com.truth.training.client.data.network.dto.StatsResponse
+import com.truth.training.client.data.network.dto.ApiStatus
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -25,6 +26,9 @@ interface TruthApi {
 
     @POST("/api/v1/refresh")
     suspend fun refreshToken(): Response<AuthResponse>
+
+    @POST("/api/v1/recalc_collective")
+    suspend fun recalcCollective(): Response<ApiStatus>
 }
 
 

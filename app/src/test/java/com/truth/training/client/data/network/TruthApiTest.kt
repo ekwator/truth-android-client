@@ -45,6 +45,18 @@ class TruthApiTest {
         assertEquals(true, resp.isSuccessful)
         assertEquals("a", resp.body()!!.accessToken)
     }
+
+    @Test
+    fun recalc_collective_parses_status() {
+        server.enqueue(MockResponse().setResponseCode(200).setBody(Gson().toJson(com.truth.training.client.data.network.dto.ApiStatus("ok"))))
+
+        val resp = kotlinx.coroutines.runBlocking {
+            api.recalcCollective()
+        }
+
+        assertEquals(true, resp.isSuccessful)
+        assertEquals("ok", resp.body()!!.status)
+    }
 }
 
 

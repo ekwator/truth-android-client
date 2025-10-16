@@ -13,7 +13,7 @@ android {
         minSdk = 24
         targetSdk = 35
         versionCode = 1
-        versionName = "0.3.0"
+        versionName = "0.4.0-pre"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -53,8 +53,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlin {
-        jvmToolchain(17)
+    // Configure Kotlin to target JVM 17 bytecode while using current JDK
+    // to avoid requiring a local JDK 17 toolchain in CI/containers.
+    @Suppress("UnstableApiUsage")
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     flavorDimensions += listOf("env")
