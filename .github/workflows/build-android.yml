@@ -22,14 +22,31 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          packages: |
-            platform-tools
-            platforms;android-34
-            build-tools;35.0.0
-            ndk;26.1.10909125
+      - name: Install Android SDK and NDK
+        run: |
+          set -euo pipefail
+          export ANDROID_SDK_ROOT="/usr/local/lib/android/sdk"
+          mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
+          cd "$ANDROID_SDK_ROOT"
+          # Install/refresh commandline-tools (12266719)
+          curl -fsSL -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-12266719_latest.zip
+          rm -rf cmdline-tools/latest || true
+          unzip -o -q cmdline-tools.zip -d cmdline-tools
+          mv -f cmdline-tools/cmdline-tools "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+          rm -f cmdline-tools.zip
+          # Accept licenses and install required packages
+          yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null
+          yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
+            "platform-tools" \
+            "platforms;android-34" \
+            "build-tools;35.0.0" \
+            "ndk;26.1.10909125"
+          # Export NDK paths for downstream tools
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV
+          echo "ANDROID_NDK_ROOT=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV
+          echo "NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
@@ -65,6 +82,9 @@ jobs:
       - name: Build libtruth_core.so
         run: |
           cd truth-core
+          export ANDROID_NDK_HOME="${ANDROID_NDK_HOME:-$ANDROID_SDK_ROOT/ndk/26.1.10909125}"
+          export ANDROID_NDK_ROOT="$ANDROID_NDK_HOME"
+          export NDK_HOME="$ANDROID_NDK_HOME"
           ./scripts/build-android.sh
           mkdir -p ../app/src/main/jniLibs/arm64-v8a ../app/src/main/jniLibs/armeabi-v7a
           cp target/aarch64-linux-android/release/libtruth_core.so ../app/src/main/jniLibs/arm64-v8a/ || true
