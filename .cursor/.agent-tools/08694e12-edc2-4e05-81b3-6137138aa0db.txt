@@ -1,0 +1,1114 @@
+build	Set up job	﻿2025-10-16T21:32:06.1636267Z Current runner version: '2.328.0'
+build	Set up job	2025-10-16T21:32:06.1662299Z ##[group]Runner Image Provisioner
+build	Set up job	2025-10-16T21:32:06.1663176Z Hosted Compute Agent
+build	Set up job	2025-10-16T21:32:06.1664118Z Version: 20250912.392
+build	Set up job	2025-10-16T21:32:06.1664683Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+build	Set up job	2025-10-16T21:32:06.1665442Z Build Date: 2025-09-12T15:23:14Z
+build	Set up job	2025-10-16T21:32:06.1666025Z ##[endgroup]
+build	Set up job	2025-10-16T21:32:06.1666536Z ##[group]Operating System
+build	Set up job	2025-10-16T21:32:06.1667151Z Ubuntu
+build	Set up job	2025-10-16T21:32:06.1667637Z 24.04.3
+build	Set up job	2025-10-16T21:32:06.1668091Z LTS
+build	Set up job	2025-10-16T21:32:06.1668531Z ##[endgroup]
+build	Set up job	2025-10-16T21:32:06.1669022Z ##[group]Runner Image
+build	Set up job	2025-10-16T21:32:06.1669549Z Image: ubuntu-24.04
+build	Set up job	2025-10-16T21:32:06.1670098Z Version: 20250929.60.1
+build	Set up job	2025-10-16T21:32:06.1671121Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2025-10-16T21:32:06.1672478Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+build	Set up job	2025-10-16T21:32:06.1673819Z ##[endgroup]
+build	Set up job	2025-10-16T21:32:06.1674916Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2025-10-16T21:32:06.1677095Z Contents: read
+build	Set up job	2025-10-16T21:32:06.1677653Z Metadata: read
+build	Set up job	2025-10-16T21:32:06.1678116Z Packages: read
+build	Set up job	2025-10-16T21:32:06.1678691Z ##[endgroup]
+build	Set up job	2025-10-16T21:32:06.1681072Z Secret source: Actions
+build	Set up job	2025-10-16T21:32:06.1682168Z Prepare workflow directory
+build	Set up job	2025-10-16T21:32:06.2009262Z Prepare all required actions
+build	Set up job	2025-10-16T21:32:06.2048043Z Getting action download info
+build	Set up job	2025-10-16T21:32:06.6448965Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+build	Set up job	2025-10-16T21:32:06.8057119Z Download action repository 'actions/setup-java@v4' (SHA:c5195efecf7bdfc987ee8bae7a71cb8b11521c00)
+build	Set up job	2025-10-16T21:32:07.2959462Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:5d458579430fc14a04a08a1e7d3694f545e91ce6)
+build	Set up job	2025-10-16T21:32:07.5422637Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+build	Set up job	2025-10-16T21:32:07.6430679Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	Set up job	2025-10-16T21:32:07.9199003Z Complete job name: build
+build	Checkout	﻿2025-10-16T21:32:08.0018095Z ##[group]Run actions/checkout@v4
+build	Checkout	2025-10-16T21:32:08.0019324Z with:
+build	Checkout	2025-10-16T21:32:08.0020000Z   submodules: true
+build	Checkout	2025-10-16T21:32:08.0020810Z   repository: ekwator/truth-android-client
+build	Checkout	2025-10-16T21:32:08.0021993Z   token: ***
+build	Checkout	2025-10-16T21:32:08.0022692Z   ssh-strict: true
+build	Checkout	2025-10-16T21:32:08.0023409Z   ssh-user: git
+build	Checkout	2025-10-16T21:32:08.0024321Z   persist-credentials: true
+build	Checkout	2025-10-16T21:32:08.0025128Z   clean: true
+build	Checkout	2025-10-16T21:32:08.0025876Z   sparse-checkout-cone-mode: true
+build	Checkout	2025-10-16T21:32:08.0026742Z   fetch-depth: 1
+build	Checkout	2025-10-16T21:32:08.0027482Z   fetch-tags: false
+build	Checkout	2025-10-16T21:32:08.0028205Z   show-progress: true
+build	Checkout	2025-10-16T21:32:08.0028926Z   lfs: false
+build	Checkout	2025-10-16T21:32:08.0029608Z   set-safe-directory: true
+build	Checkout	2025-10-16T21:32:08.0030628Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.1122977Z Syncing repository: ekwator/truth-android-client
+build	Checkout	2025-10-16T21:32:08.1125981Z ##[group]Getting Git version info
+build	Checkout	2025-10-16T21:32:08.1127442Z Working directory is '/home/runner/work/truth-android-client/truth-android-client'
+build	Checkout	2025-10-16T21:32:08.1129458Z [command]/usr/bin/git version
+build	Checkout	2025-10-16T21:32:08.1183037Z git version 2.51.0
+build	Checkout	2025-10-16T21:32:08.1210882Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.1225818Z Temporarily overriding HOME='/home/runner/work/_temp/d7b63cb4-dba2-49c2-b2b3-d017cf5f71e7' before making global git config changes
+build	Checkout	2025-10-16T21:32:08.1228819Z Adding repository directory to the temporary git global config as a safe directory
+build	Checkout	2025-10-16T21:32:08.1239093Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/truth-android-client/truth-android-client
+build	Checkout	2025-10-16T21:32:08.1275584Z Deleting the contents of '/home/runner/work/truth-android-client/truth-android-client'
+build	Checkout	2025-10-16T21:32:08.1279106Z ##[group]Initializing the repository
+build	Checkout	2025-10-16T21:32:08.1283143Z [command]/usr/bin/git init /home/runner/work/truth-android-client/truth-android-client
+build	Checkout	2025-10-16T21:32:08.1411015Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	Checkout	2025-10-16T21:32:08.1414209Z hint: is subject to change. To configure the initial branch name to use in all
+build	Checkout	2025-10-16T21:32:08.1416710Z hint: of your new repositories, which will suppress this warning, call:
+build	Checkout	2025-10-16T21:32:08.1418679Z hint:
+build	Checkout	2025-10-16T21:32:08.1420220Z hint: 	git config --global init.defaultBranch <name>
+build	Checkout	2025-10-16T21:32:08.1421944Z hint:
+build	Checkout	2025-10-16T21:32:08.1423702Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	Checkout	2025-10-16T21:32:08.1426581Z hint: 'development'. The just-created branch can be renamed via this command:
+build	Checkout	2025-10-16T21:32:08.1428788Z hint:
+build	Checkout	2025-10-16T21:32:08.1429980Z hint: 	git branch -m <name>
+build	Checkout	2025-10-16T21:32:08.1431435Z hint:
+build	Checkout	2025-10-16T21:32:08.1433176Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	Checkout	2025-10-16T21:32:08.1436819Z Initialized empty Git repository in /home/runner/work/truth-android-client/truth-android-client/.git/
+build	Checkout	2025-10-16T21:32:08.1442438Z [command]/usr/bin/git remote add origin https://github.com/ekwator/truth-android-client
+build	Checkout	2025-10-16T21:32:08.1474578Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.1475900Z ##[group]Disabling automatic garbage collection
+build	Checkout	2025-10-16T21:32:08.1478362Z [command]/usr/bin/git config --local gc.auto 0
+build	Checkout	2025-10-16T21:32:08.1508237Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.1509436Z ##[group]Setting up auth
+build	Checkout	2025-10-16T21:32:08.1514872Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Checkout	2025-10-16T21:32:08.1544772Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Checkout	2025-10-16T21:32:08.1889847Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Checkout	2025-10-16T21:32:08.1924772Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Checkout	2025-10-16T21:32:08.2165450Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Checkout	2025-10-16T21:32:08.2203159Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.2205706Z ##[group]Fetching the repository
+build	Checkout	2025-10-16T21:32:08.2224222Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2e4794e73a835766f010bbf37df620a681bd17a5:refs/remotes/origin/release/ci-build-run
+build	Checkout	2025-10-16T21:32:08.4823105Z From https://github.com/ekwator/truth-android-client
+build	Checkout	2025-10-16T21:32:08.4825354Z  * [new ref]         2e4794e73a835766f010bbf37df620a681bd17a5 -> origin/release/ci-build-run
+build	Checkout	2025-10-16T21:32:08.4857479Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.4859672Z ##[group]Determining the checkout info
+build	Checkout	2025-10-16T21:32:08.4862157Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.4865493Z [command]/usr/bin/git sparse-checkout disable
+build	Checkout	2025-10-16T21:32:08.4907431Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	Checkout	2025-10-16T21:32:08.4935404Z ##[group]Checking out the ref
+build	Checkout	2025-10-16T21:32:08.4940049Z [command]/usr/bin/git checkout --progress --force -B release/ci-build-run refs/remotes/origin/release/ci-build-run
+build	Checkout	2025-10-16T21:32:08.5027776Z Switched to a new branch 'release/ci-build-run'
+build	Checkout	2025-10-16T21:32:08.5029861Z branch 'release/ci-build-run' set up to track 'origin/release/ci-build-run'.
+build	Checkout	2025-10-16T21:32:08.5037761Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.5122585Z ##[group]Setting up auth for fetching submodules
+build	Checkout	2025-10-16T21:32:08.5125820Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Checkout	2025-10-16T21:32:08.5130824Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+build	Checkout	2025-10-16T21:32:08.5136082Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+build	Checkout	2025-10-16T21:32:08.5145303Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-3940389@github.com:
+build	Checkout	2025-10-16T21:32:08.5171014Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.5172209Z ##[group]Fetching submodules
+build	Checkout	2025-10-16T21:32:08.5174095Z [command]/usr/bin/git submodule sync
+build	Checkout	2025-10-16T21:32:08.5397105Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1
+build	Checkout	2025-10-16T21:32:08.5616730Z [command]/usr/bin/git submodule foreach git config --local gc.auto 0
+build	Checkout	2025-10-16T21:32:08.5828282Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.5829570Z ##[group]Persisting credentials for submodules
+build	Checkout	2025-10-16T21:32:08.5836218Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+build	Checkout	2025-10-16T21:32:08.6052477Z [command]/usr/bin/git submodule foreach sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+build	Checkout	2025-10-16T21:32:08.6276791Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+build	Checkout	2025-10-16T21:32:08.6520259Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'org-3940389@github.com:'
+build	Checkout	2025-10-16T21:32:08.6760143Z ##[endgroup]
+build	Checkout	2025-10-16T21:32:08.6799828Z [command]/usr/bin/git log -1 --format=%H
+build	Checkout	2025-10-16T21:32:08.6824004Z 2e4794e73a835766f010bbf37df620a681bd17a5
+build	Setup Java	﻿2025-10-16T21:32:08.7129153Z ##[group]Run actions/setup-java@v4
+build	Setup Java	2025-10-16T21:32:08.7130106Z with:
+build	Setup Java	2025-10-16T21:32:08.7130758Z   distribution: temurin
+build	Setup Java	2025-10-16T21:32:08.7131515Z   java-version: 17
+build	Setup Java	2025-10-16T21:32:08.7132218Z   java-package: jdk
+build	Setup Java	2025-10-16T21:32:08.7132943Z   check-latest: false
+build	Setup Java	2025-10-16T21:32:08.7133905Z   server-id: github
+build	Setup Java	2025-10-16T21:32:08.7134651Z   server-username: GITHUB_ACTOR
+build	Setup Java	2025-10-16T21:32:08.7135518Z   server-password: GITHUB_TOKEN
+build	Setup Java	2025-10-16T21:32:08.7136412Z   overwrite-settings: true
+build	Setup Java	2025-10-16T21:32:08.7137205Z   job-status: success
+build	Setup Java	2025-10-16T21:32:08.7138181Z   token: ***
+build	Setup Java	2025-10-16T21:32:08.7138836Z ##[endgroup]
+build	Setup Java	2025-10-16T21:32:08.9132279Z ##[group]Installed distributions
+build	Setup Java	2025-10-16T21:32:08.9527614Z Resolved Java 17.0.16+8 from tool-cache
+build	Setup Java	2025-10-16T21:32:08.9529761Z Setting Java 17.0.16+8 as the default
+build	Setup Java	2025-10-16T21:32:08.9544549Z Creating toolchains.xml for JDK version 17 from temurin
+build	Setup Java	2025-10-16T21:32:08.9623252Z Writing to /home/runner/.m2/toolchains.xml
+build	Setup Java	2025-10-16T21:32:08.9624904Z 
+build	Setup Java	2025-10-16T21:32:08.9625594Z Java configuration:
+build	Setup Java	2025-10-16T21:32:08.9626943Z   Distribution: temurin
+build	Setup Java	2025-10-16T21:32:08.9628320Z   Version: 17.0.16+8
+build	Setup Java	2025-10-16T21:32:08.9630231Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Java	2025-10-16T21:32:08.9631913Z 
+build	Setup Java	2025-10-16T21:32:08.9633345Z ##[endgroup]
+build	Setup Java	2025-10-16T21:32:08.9652825Z Creating settings.xml with server-id: github
+build	Setup Java	2025-10-16T21:32:08.9654940Z Writing to /home/runner/.m2/settings.xml
+build	Install Android SDK and NDK	﻿2025-10-16T21:32:08.9791960Z ##[group]Run set -euo pipefail
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9793012Z [36;1mset -euo pipefail[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9794365Z [36;1mexport ANDROID_SDK_ROOT="/usr/local/lib/android/sdk"[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9795643Z [36;1mmkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9796689Z [36;1mcd "$ANDROID_SDK_ROOT"[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9797686Z [36;1m# Install/refresh commandline-tools (12266719)[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9799655Z [36;1mcurl -fsSL -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-12266719_latest.zip[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9801568Z [36;1mrm -rf cmdline-tools/latest || true[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9802678Z [36;1munzip -o -q cmdline-tools.zip -d cmdline-tools[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9804342Z [36;1mmv -f cmdline-tools/cmdline-tools "$ANDROID_SDK_ROOT/cmdline-tools/latest"[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9805740Z [36;1mrm -f cmdline-tools.zip[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9806758Z [36;1m# Accept licenses and install required packages[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9808720Z [36;1myes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9810538Z [36;1myes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9811746Z [36;1m  "platform-tools" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9812598Z [36;1m  "platforms;android-34" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9813781Z [36;1m  "platforms;android-35" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9814695Z [36;1m  "build-tools;35.0.0" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9815555Z [36;1m  "ndk;26.1.10909125" || true[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9816519Z [36;1m# Export NDK paths for downstream tools[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9817738Z [36;1mecho "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9819048Z [36;1mecho "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9820504Z [36;1mecho "ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9822157Z [36;1mecho "ANDROID_NDK_ROOT=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9823966Z [36;1mecho "NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9865494Z shell: /usr/bin/bash -e {0}
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9866335Z env:
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9867326Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9868925Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Install Android SDK and NDK	2025-10-16T21:32:08.9870186Z ##[endgroup]
+build	Install Android SDK and NDK	2025-10-16T21:32:24.4499468Z yes: standard output: Broken pipe
+build	Install Android SDK and NDK	2025-10-16T21:32:25.2312576Z Loading package information...                                                  
+build	Install Android SDK and NDK	2025-10-16T21:32:25.3295537Z Loading local repository...                                                     
+build	Install Android SDK and NDK	2025-10-16T21:32:25.3296807Z [                                       ] 3% Loading local repository...        
+build	Install Android SDK and NDK	2025-10-16T21:32:25.3394604Z [                                       ] 3% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:25.7010840Z [=                                      ] 3% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:25.7766742Z [=                                      ] 4% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:25.8131613Z [=                                      ] 5% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:25.8751066Z [==                                     ] 5% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:25.9475107Z [==                                     ] 6% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:26.0253890Z [==                                     ] 7% Fetch remote repository...         
+build	Install Android SDK and NDK	2025-10-16T21:32:26.0282361Z [==                                     ] 7% Computing updates...               
+build	Install Android SDK and NDK	2025-10-16T21:32:26.0371380Z [===                                    ] 8% Computing updates...               
+build	Install Android SDK and NDK	2025-10-16T21:32:26.0558010Z [===                                    ] 10% Computing updates...              
+build	Install Android SDK and NDK	2025-10-16T21:32:26.4817902Z [===                                    ] 10% Installing NDK (Side by side) 26.1
+build	Install Android SDK and NDK	2025-10-16T21:32:26.6672480Z [===                                    ] 10% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:26.7666345Z [====                                   ] 10% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:26.9843366Z [====                                   ] 11% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:27.2428399Z [====                                   ] 12% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:27.4809200Z [=====                                  ] 13% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:27.7507076Z [=====                                  ] 14% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:27.8855058Z [=====                                  ] 15% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:28.0007909Z [======                                 ] 15% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:28.1884445Z [======                                 ] 16% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:28.4818035Z [======                                 ] 17% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:28.7017577Z [=======                                ] 18% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:28.9604352Z [=======                                ] 19% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:29.0626759Z [=======                                ] 20% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:29.5012984Z [========                               ] 20% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:29.8919710Z [========                               ] 21% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:30.3485199Z [========                               ] 22% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:30.5709751Z [=========                              ] 23% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:30.8449150Z [=========                              ] 24% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:30.9615005Z [=========                              ] 25% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:31.0681363Z [==========                             ] 25% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:31.3969018Z [==========                             ] 26% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:31.6171251Z [==========                             ] 27% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:31.9118700Z [===========                            ] 28% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:32.1394013Z [===========                            ] 29% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:32.2524820Z [===========                            ] 30% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:32.4629627Z [============                           ] 30% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:32.9042566Z [============                           ] 31% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:33.4602900Z [============                           ] 32% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:33.4606777Z [============                           ] 33% Downloading android-ndk-r26b-linux
+build	Install Android SDK and NDK	2025-10-16T21:32:33.8265898Z [============                           ] 33% Unzipping...                      
+build	Install Android SDK and NDK	2025-10-16T21:32:33.8268622Z [============                           ] 33% Unzipping... android-ndk-r26b/    
+build	Install Android SDK and NDK	2025-10-16T21:32:33.8277884Z [============                           ] 33% Unzipping... android-ndk-r26b/CHAN
+build	Install Android SDK and NDK	2025-10-16T21:32:33.8285503Z [=============                          ] 33% Unzipping... android-ndk-r26b/CHAN
+build	Install Android SDK and NDK	2025-10-16T21:32:33.8314279Z [=============                          ] 33% Unzipping... android-ndk-r26b/wrap
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9428007Z [=============                          ] 33% Unzipping... android-ndk-r26b/preb
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9756473Z [=============                          ] 33% Unzipping... android-ndk-r26b/buil
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9778099Z [=============                          ] 33% Unzipping... android-ndk-r26b/NOTI
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9782016Z [=============                          ] 33% Unzipping... android-ndk-r26b/ndk-
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9829665Z [=============                          ] 33% Unzipping... android-ndk-r26b/NOTI
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9840811Z [=============                          ] 33% Unzipping... android-ndk-r26b/meta
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9854019Z [=============                          ] 33% Unzipping... android-ndk-r26b/ndk-
+build	Install Android SDK and NDK	2025-10-16T21:32:33.9927345Z [=============                          ] 33% Unzipping... android-ndk-r26b/pyth
+build	Install Android SDK and NDK	2025-10-16T21:32:34.4603658Z [=============                          ] 33% Unzipping... android-ndk-r26b/sour
+build	Install Android SDK and NDK	2025-10-16T21:32:34.6761855Z [=============                          ] 33% Unzipping... android-ndk-r26b/simp
+build	Install Android SDK and NDK	2025-10-16T21:32:34.6763166Z [=============                          ] 33% Unzipping... android-ndk-r26b/ndk-
+build	Install Android SDK and NDK	2025-10-16T21:32:34.6765561Z [=============                          ] 33% Unzipping... android-ndk-r26b/READ
+build	Install Android SDK and NDK	2025-10-16T21:32:34.7195931Z [=============                          ] 33% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:35.1333305Z [=============                          ] 34% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:35.3233016Z [=============                          ] 35% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:35.5304735Z [==============                         ] 35% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:35.8580240Z [==============                         ] 36% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:36.2896210Z [==============                         ] 37% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:36.7250944Z [===============                        ] 38% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:37.1459839Z [===============                        ] 39% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:37.3053069Z [===============                        ] 40% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:37.5267165Z [================                       ] 40% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:37.9149518Z [================                       ] 41% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:38.9072325Z [================                       ] 42% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:39.6194288Z [=================                      ] 43% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:40.1404007Z [=================                      ] 44% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:40.3666220Z [=================                      ] 45% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:40.5718048Z [==================                     ] 45% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:41.0229187Z [==================                     ] 46% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:41.4892759Z [==================                     ] 47% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:41.8279597Z [===================                    ] 48% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:42.2614973Z [===================                    ] 49% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:42.5225803Z [===================                    ] 50% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:42.6814141Z [====================                   ] 50% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:43.1748646Z [====================                   ] 51% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:43.5059205Z [====================                   ] 52% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:43.9320977Z [=====================                  ] 53% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:44.3745807Z [=====================                  ] 54% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:44.4491068Z [=====================                  ] 55% Unzipping... android-ndk-r26b/tool
+build	Install Android SDK and NDK	2025-10-16T21:32:44.4493893Z [=====================                  ] 55% Unzipping... android-ndk-r26b/ndk-
+build	Install Android SDK and NDK	2025-10-16T21:32:44.6700106Z [=====================                  ] 55% Unzipping... android-ndk-r26b/shad
+build	Install Android SDK and NDK	2025-10-16T21:32:44.6700747Z [=======================================] 100% Unzipping... android-ndk-r26b/sha
+build	Install Android SDK and NDK	2025-10-16T21:32:45.3660781Z 
+build	Install Android SDK and NDK	2025-10-16T21:32:45.3924582Z yes: standard output: Broken pipe
+build	Setup Rust	﻿2025-10-16T21:32:45.4072647Z ##[group]Run dtolnay/rust-toolchain@stable
+build	Setup Rust	2025-10-16T21:32:45.4072966Z with:
+build	Setup Rust	2025-10-16T21:32:45.4073141Z   toolchain: stable
+build	Setup Rust	2025-10-16T21:32:45.4073333Z env:
+build	Setup Rust	2025-10-16T21:32:45.4073838Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4074301Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4074691Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4074964Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4075273Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4075620Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4076142Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4076400Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:45.4172821Z ##[group]Run : parse toolchain version
+build	Setup Rust	2025-10-16T21:32:45.4173151Z [36;1m: parse toolchain version[0m
+build	Setup Rust	2025-10-16T21:32:45.4173412Z [36;1mif [[ -z $toolchain ]]; then[0m
+build	Setup Rust	2025-10-16T21:32:45.4174182Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+build	Setup Rust	2025-10-16T21:32:45.4174670Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+build	Setup Rust	2025-10-16T21:32:45.4174932Z [36;1m  exit 1[0m
+build	Setup Rust	2025-10-16T21:32:45.4175228Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+build	Setup Rust	2025-10-16T21:32:45.4175598Z [36;1m  if [[ Linux == macOS ]]; then[0m
+build	Setup Rust	2025-10-16T21:32:45.4176041Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4176488Z [36;1m  else[0m
+build	Setup Rust	2025-10-16T21:32:45.4176834Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4177220Z [36;1m  fi[0m
+build	Setup Rust	2025-10-16T21:32:45.4177481Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+build	Setup Rust	2025-10-16T21:32:45.4177957Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4178372Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+build	Setup Rust	2025-10-16T21:32:45.4178814Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4179229Z [36;1melse[0m
+build	Setup Rust	2025-10-16T21:32:45.4179444Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4179717Z [36;1mfi[0m
+build	Setup Rust	2025-10-16T21:32:45.4213983Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:45.4214320Z env:
+build	Setup Rust	2025-10-16T21:32:45.4214599Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4215045Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4215417Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4215688Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4215994Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4216346Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4216668Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4216926Z   toolchain: stable
+build	Setup Rust	2025-10-16T21:32:45.4217111Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:45.4318982Z ##[group]Run : construct rustup command line
+build	Setup Rust	2025-10-16T21:32:45.4319293Z [36;1m: construct rustup command line[0m
+build	Setup Rust	2025-10-16T21:32:45.4319703Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4320263Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4320688Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:45.4352224Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:45.4352540Z env:
+build	Setup Rust	2025-10-16T21:32:45.4353030Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4353679Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4354079Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4354359Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4354665Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4355018Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4355343Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4355608Z   targets: 
+build	Setup Rust	2025-10-16T21:32:45.4355922Z   components: 
+build	Setup Rust	2025-10-16T21:32:45.4356106Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:45.4442518Z ##[group]Run : set $CARGO_HOME
+build	Setup Rust	2025-10-16T21:32:45.4442784Z [36;1m: set $CARGO_HOME[0m
+build	Setup Rust	2025-10-16T21:32:45.4443084Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+build	Setup Rust	2025-10-16T21:32:45.4475920Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:45.4476291Z env:
+build	Setup Rust	2025-10-16T21:32:45.4476691Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4477203Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4477599Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4477882Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4478213Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4478588Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4478967Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4479262Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:45.4587778Z ##[group]Run : install rustup if needed
+build	Setup Rust	2025-10-16T21:32:45.4588099Z [36;1m: install rustup if needed[0m
+build	Setup Rust	2025-10-16T21:32:45.4588387Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+build	Setup Rust	2025-10-16T21:32:45.4589093Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+build	Setup Rust	2025-10-16T21:32:45.4589771Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+build	Setup Rust	2025-10-16T21:32:45.4590025Z [36;1mfi[0m
+build	Setup Rust	2025-10-16T21:32:45.4623176Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:45.4623727Z env:
+build	Setup Rust	2025-10-16T21:32:45.4624042Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4624519Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4624906Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4625208Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4625523Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4625879Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4626216Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4626503Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:45.4626739Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:45.4711027Z ##[group]Run rustup toolchain install stable --profile minimal --no-self-update
+build	Setup Rust	2025-10-16T21:32:45.4711563Z [36;1mrustup toolchain install stable --profile minimal --no-self-update[0m
+build	Setup Rust	2025-10-16T21:32:45.4745583Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:45.4745909Z env:
+build	Setup Rust	2025-10-16T21:32:45.4746199Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4746672Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.4747055Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4747346Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.4747658Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4748022Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4748348Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.4748827Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:45.4749047Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:45.8444221Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+build	Setup Rust	2025-10-16T21:32:45.9660715Z 
+build	Setup Rust	2025-10-16T21:32:45.9767913Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.90.0 (1159e78c4 2025-09-14)
+build	Setup Rust	2025-10-16T21:32:45.9768442Z 
+build	Setup Rust	2025-10-16T21:32:45.9824627Z ##[group]Run rustup default stable
+build	Setup Rust	2025-10-16T21:32:45.9825106Z [36;1mrustup default stable[0m
+build	Setup Rust	2025-10-16T21:32:45.9871565Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:45.9872112Z env:
+build	Setup Rust	2025-10-16T21:32:45.9872897Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.9874026Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:45.9874754Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.9875265Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:45.9875849Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.9876503Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.9877122Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:45.9877622Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:45.9878016Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.0006633Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+build	Setup Rust	2025-10-16T21:32:46.0369164Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+build	Setup Rust	2025-10-16T21:32:46.0369829Z 
+build	Setup Rust	2025-10-16T21:32:46.0467881Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.90.0 (1159e78c4 2025-09-14)
+build	Setup Rust	2025-10-16T21:32:46.0470165Z 
+build	Setup Rust	2025-10-16T21:32:46.0510833Z ##[group]Run : create cachekey
+build	Setup Rust	2025-10-16T21:32:46.0511118Z [36;1m: create cachekey[0m
+build	Setup Rust	2025-10-16T21:32:46.0511581Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+build	Setup Rust	2025-10-16T21:32:46.0512185Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+build	Setup Rust	2025-10-16T21:32:46.0512657Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+build	Setup Rust	2025-10-16T21:32:46.0544718Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:46.0545035Z env:
+build	Setup Rust	2025-10-16T21:32:46.0545323Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.0545792Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.0546182Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.0546461Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.0546788Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.0547152Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.0547478Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.0547762Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:46.0547992Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.3552624Z ##[group]Run : disable incremental compilation
+build	Setup Rust	2025-10-16T21:32:46.3553014Z [36;1m: disable incremental compilation[0m
+build	Setup Rust	2025-10-16T21:32:46.3553337Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+build	Setup Rust	2025-10-16T21:32:46.3553898Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+build	Setup Rust	2025-10-16T21:32:46.3554179Z [36;1mfi[0m
+build	Setup Rust	2025-10-16T21:32:46.3587203Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:46.3587564Z env:
+build	Setup Rust	2025-10-16T21:32:46.3587866Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.3588375Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.3588825Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.3589130Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.3589491Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3589888Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3590472Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3590780Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:46.3591034Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.3666061Z ##[group]Run : enable colors in Cargo output
+build	Setup Rust	2025-10-16T21:32:46.3666379Z [36;1m: enable colors in Cargo output[0m
+build	Setup Rust	2025-10-16T21:32:46.3666662Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+build	Setup Rust	2025-10-16T21:32:46.3666960Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+build	Setup Rust	2025-10-16T21:32:46.3667224Z [36;1mfi[0m
+build	Setup Rust	2025-10-16T21:32:46.3698174Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:46.3698673Z env:
+build	Setup Rust	2025-10-16T21:32:46.3698957Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.3699419Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.3699797Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.3700081Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.3700388Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3700739Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3701071Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3701353Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:46.3701576Z   CARGO_INCREMENTAL: 0
+build	Setup Rust	2025-10-16T21:32:46.3701770Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.3772767Z ##[group]Run : enable Cargo sparse registry
+build	Setup Rust	2025-10-16T21:32:46.3773079Z [36;1m: enable Cargo sparse registry[0m
+build	Setup Rust	2025-10-16T21:32:46.3773404Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+build	Setup Rust	2025-10-16T21:32:46.3774347Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+build	Setup Rust	2025-10-16T21:32:46.3774988Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+build	Setup Rust	2025-10-16T21:32:46.3775503Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+build	Setup Rust	2025-10-16T21:32:46.3775982Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+build	Setup Rust	2025-10-16T21:32:46.3776418Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+build	Setup Rust	2025-10-16T21:32:46.3776921Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+build	Setup Rust	2025-10-16T21:32:46.3777386Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+build	Setup Rust	2025-10-16T21:32:46.3777694Z [36;1m  fi[0m
+build	Setup Rust	2025-10-16T21:32:46.3777874Z [36;1mfi[0m
+build	Setup Rust	2025-10-16T21:32:46.3808063Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:46.3808371Z env:
+build	Setup Rust	2025-10-16T21:32:46.3808657Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.3809104Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.3809486Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.3809772Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.3810072Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3810424Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3810743Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.3811014Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:46.3811231Z   CARGO_INCREMENTAL: 0
+build	Setup Rust	2025-10-16T21:32:46.3811434Z   CARGO_TERM_COLOR: always
+build	Setup Rust	2025-10-16T21:32:46.3811626Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.4204271Z ##[group]Run : work around spurious network errors in curl 8.0
+build	Setup Rust	2025-10-16T21:32:46.4204731Z [36;1m: work around spurious network errors in curl 8.0[0m
+build	Setup Rust	2025-10-16T21:32:46.4205268Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+build	Setup Rust	2025-10-16T21:32:46.4205879Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+build	Setup Rust	2025-10-16T21:32:46.4206541Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+build	Setup Rust	2025-10-16T21:32:46.4206839Z [36;1mfi[0m
+build	Setup Rust	2025-10-16T21:32:46.4238736Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:46.4239077Z env:
+build	Setup Rust	2025-10-16T21:32:46.4239369Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.4239856Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.4240257Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.4240584Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.4241077Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.4241459Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.4241805Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.4242100Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:46.4242341Z   CARGO_INCREMENTAL: 0
+build	Setup Rust	2025-10-16T21:32:46.4242562Z   CARGO_TERM_COLOR: always
+build	Setup Rust	2025-10-16T21:32:46.4242778Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.4474222Z ##[group]Run rustc +stable --version --verbose
+build	Setup Rust	2025-10-16T21:32:46.4474586Z [36;1mrustc +stable --version --verbose[0m
+build	Setup Rust	2025-10-16T21:32:46.4506376Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+build	Setup Rust	2025-10-16T21:32:46.4506694Z env:
+build	Setup Rust	2025-10-16T21:32:46.4506978Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.4507448Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Rust	2025-10-16T21:32:46.4507851Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.4508149Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Setup Rust	2025-10-16T21:32:46.4508453Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.4509023Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.4509490Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Setup Rust	2025-10-16T21:32:46.4509807Z   CARGO_HOME: /home/runner/.cargo
+build	Setup Rust	2025-10-16T21:32:46.4510041Z   CARGO_INCREMENTAL: 0
+build	Setup Rust	2025-10-16T21:32:46.4510247Z   CARGO_TERM_COLOR: always
+build	Setup Rust	2025-10-16T21:32:46.4510465Z ##[endgroup]
+build	Setup Rust	2025-10-16T21:32:46.4704933Z rustc 1.90.0 (1159e78c4 2025-09-14)
+build	Setup Rust	2025-10-16T21:32:46.4706086Z binary: rustc
+build	Setup Rust	2025-10-16T21:32:46.4708557Z commit-hash: 1159e78c4747b02ef996e55082b704c09b970588
+build	Setup Rust	2025-10-16T21:32:46.4709326Z commit-date: 2025-09-14
+build	Setup Rust	2025-10-16T21:32:46.4709816Z host: x86_64-unknown-linux-gnu
+build	Setup Rust	2025-10-16T21:32:46.4710213Z release: 1.90.0
+build	Setup Rust	2025-10-16T21:32:46.4710470Z LLVM version: 20.1.8
+build	Add Android targets	﻿2025-10-16T21:32:46.4781895Z ##[group]Run rustup target add aarch64-linux-android armv7-linux-androideabi
+build	Add Android targets	2025-10-16T21:32:46.4782443Z [36;1mrustup target add aarch64-linux-android armv7-linux-androideabi[0m
+build	Add Android targets	2025-10-16T21:32:46.4814044Z shell: /usr/bin/bash -e {0}
+build	Add Android targets	2025-10-16T21:32:46.4814279Z env:
+build	Add Android targets	2025-10-16T21:32:46.4814561Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Add Android targets	2025-10-16T21:32:46.4815038Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Add Android targets	2025-10-16T21:32:46.4815421Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Add Android targets	2025-10-16T21:32:46.4815695Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Add Android targets	2025-10-16T21:32:46.4816010Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Add Android targets	2025-10-16T21:32:46.4816357Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Add Android targets	2025-10-16T21:32:46.4816683Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Add Android targets	2025-10-16T21:32:46.4816962Z   CARGO_HOME: /home/runner/.cargo
+build	Add Android targets	2025-10-16T21:32:46.4817184Z   CARGO_INCREMENTAL: 0
+build	Add Android targets	2025-10-16T21:32:46.4817441Z   CARGO_TERM_COLOR: always
+build	Add Android targets	2025-10-16T21:32:46.4817652Z ##[endgroup]
+build	Add Android targets	2025-10-16T21:32:46.6135123Z info: downloading component 'rust-std' for 'aarch64-linux-android'
+build	Add Android targets	2025-10-16T21:32:46.7295836Z info: installing component 'rust-std' for 'aarch64-linux-android'
+build	Add Android targets	2025-10-16T21:32:48.5136342Z info: downloading component 'rust-std' for 'armv7-linux-androideabi'
+build	Add Android targets	2025-10-16T21:32:48.7218540Z info: installing component 'rust-std' for 'armv7-linux-androideabi'
+build	Cache Cargo	﻿2025-10-16T21:32:50.6126712Z ##[group]Run actions/cache@v4
+build	Cache Cargo	2025-10-16T21:32:50.6126988Z with:
+build	Cache Cargo	2025-10-16T21:32:50.6127179Z   path: ~/.cargo/registry
+build	Cache Cargo	2025-10-16T21:32:50.6127386Z   key: cargo-Linux-
+build	Cache Cargo	2025-10-16T21:32:50.6127594Z   enableCrossOsArchive: false
+build	Cache Cargo	2025-10-16T21:32:50.6127825Z   fail-on-cache-miss: false
+build	Cache Cargo	2025-10-16T21:32:50.6128047Z   lookup-only: false
+build	Cache Cargo	2025-10-16T21:32:50.6128239Z   save-always: false
+build	Cache Cargo	2025-10-16T21:32:50.6128426Z env:
+build	Cache Cargo	2025-10-16T21:32:50.6128711Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Cache Cargo	2025-10-16T21:32:50.6129187Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Cache Cargo	2025-10-16T21:32:50.6129929Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Cache Cargo	2025-10-16T21:32:50.6130213Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Cache Cargo	2025-10-16T21:32:50.6130538Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Cache Cargo	2025-10-16T21:32:50.6130908Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Cache Cargo	2025-10-16T21:32:50.6131257Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Cache Cargo	2025-10-16T21:32:50.6131578Z   CARGO_HOME: /home/runner/.cargo
+build	Cache Cargo	2025-10-16T21:32:50.6131816Z   CARGO_INCREMENTAL: 0
+build	Cache Cargo	2025-10-16T21:32:50.6132017Z   CARGO_TERM_COLOR: always
+build	Cache Cargo	2025-10-16T21:32:50.6132229Z ##[endgroup]
+build	Cache Cargo	2025-10-16T21:32:50.8910559Z Cache not found for input keys: cargo-Linux-
+build	Cache Gradle	﻿2025-10-16T21:32:50.9818945Z ##[group]Run actions/cache@v4
+build	Cache Gradle	2025-10-16T21:32:50.9819302Z with:
+build	Cache Gradle	2025-10-16T21:32:50.9819548Z   path: ~/.gradle/caches
+build	Cache Gradle	2025-10-16T21:32:50.9820099Z   key: gradle-Linux-b47f0cd60aa549a9809c3c69b48c631d0cd50e98d0e5163e3ba65d9555931e93
+build	Cache Gradle	2025-10-16T21:32:50.9820742Z   enableCrossOsArchive: false
+build	Cache Gradle	2025-10-16T21:32:50.9821070Z   fail-on-cache-miss: false
+build	Cache Gradle	2025-10-16T21:32:50.9821376Z   lookup-only: false
+build	Cache Gradle	2025-10-16T21:32:50.9821643Z   save-always: false
+build	Cache Gradle	2025-10-16T21:32:50.9821895Z env:
+build	Cache Gradle	2025-10-16T21:32:50.9822289Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Cache Gradle	2025-10-16T21:32:50.9822957Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Cache Gradle	2025-10-16T21:32:50.9823789Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Cache Gradle	2025-10-16T21:32:50.9824236Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Cache Gradle	2025-10-16T21:32:50.9824695Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Cache Gradle	2025-10-16T21:32:50.9825172Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Cache Gradle	2025-10-16T21:32:50.9825553Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Cache Gradle	2025-10-16T21:32:50.9825846Z   CARGO_HOME: /home/runner/.cargo
+build	Cache Gradle	2025-10-16T21:32:50.9826075Z   CARGO_INCREMENTAL: 0
+build	Cache Gradle	2025-10-16T21:32:50.9826289Z   CARGO_TERM_COLOR: always
+build	Cache Gradle	2025-10-16T21:32:50.9826503Z ##[endgroup]
+build	Cache Gradle	2025-10-16T21:32:51.2413082Z Cache not found for input keys: gradle-Linux-b47f0cd60aa549a9809c3c69b48c631d0cd50e98d0e5163e3ba65d9555931e93
+build	Make gradlew executable	﻿2025-10-16T21:32:51.2494594Z ##[group]Run chmod +x ./gradlew
+build	Make gradlew executable	2025-10-16T21:32:51.2494902Z [36;1mchmod +x ./gradlew[0m
+build	Make gradlew executable	2025-10-16T21:32:51.2528062Z shell: /usr/bin/bash -e {0}
+build	Make gradlew executable	2025-10-16T21:32:51.2528322Z env:
+build	Make gradlew executable	2025-10-16T21:32:51.2528623Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Make gradlew executable	2025-10-16T21:32:51.2529112Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Make gradlew executable	2025-10-16T21:32:51.2529549Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Make gradlew executable	2025-10-16T21:32:51.2529861Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Make gradlew executable	2025-10-16T21:32:51.2530208Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Make gradlew executable	2025-10-16T21:32:51.2530605Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Make gradlew executable	2025-10-16T21:32:51.2530997Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Make gradlew executable	2025-10-16T21:32:51.2531306Z   CARGO_HOME: /home/runner/.cargo
+build	Make gradlew executable	2025-10-16T21:32:51.2531557Z   CARGO_INCREMENTAL: 0
+build	Make gradlew executable	2025-10-16T21:32:51.2531774Z   CARGO_TERM_COLOR: always
+build	Make gradlew executable	2025-10-16T21:32:51.2532008Z ##[endgroup]
+build	Prepare truth-core	﻿2025-10-16T21:32:51.2625946Z ##[group]Run if [ ! -d truth-core ]; then
+build	Prepare truth-core	2025-10-16T21:32:51.2626312Z [36;1mif [ ! -d truth-core ]; then[0m
+build	Prepare truth-core	2025-10-16T21:32:51.2626652Z [36;1m  echo "truth-core directory not found; cloning..."[0m
+build	Prepare truth-core	2025-10-16T21:32:51.2627121Z [36;1m  git clone --depth 1 https://github.com/ekwator/truth-training truth-core[0m
+build	Prepare truth-core	2025-10-16T21:32:51.2627511Z [36;1melse[0m
+build	Prepare truth-core	2025-10-16T21:32:51.2627726Z [36;1m  echo "truth-core directory exists."[0m
+build	Prepare truth-core	2025-10-16T21:32:51.2627982Z [36;1mfi[0m
+build	Prepare truth-core	2025-10-16T21:32:51.2660608Z shell: /usr/bin/bash -e {0}
+build	Prepare truth-core	2025-10-16T21:32:51.2660921Z env:
+build	Prepare truth-core	2025-10-16T21:32:51.2661237Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Prepare truth-core	2025-10-16T21:32:51.2661779Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Prepare truth-core	2025-10-16T21:32:51.2662450Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Prepare truth-core	2025-10-16T21:32:51.2662762Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Prepare truth-core	2025-10-16T21:32:51.2663107Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Prepare truth-core	2025-10-16T21:32:51.2663920Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Prepare truth-core	2025-10-16T21:32:51.2664312Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Prepare truth-core	2025-10-16T21:32:51.2664632Z   CARGO_HOME: /home/runner/.cargo
+build	Prepare truth-core	2025-10-16T21:32:51.2664881Z   CARGO_INCREMENTAL: 0
+build	Prepare truth-core	2025-10-16T21:32:51.2665104Z   CARGO_TERM_COLOR: always
+build	Prepare truth-core	2025-10-16T21:32:51.2665329Z ##[endgroup]
+build	Prepare truth-core	2025-10-16T21:32:51.2723958Z truth-core directory not found; cloning...
+build	Prepare truth-core	2025-10-16T21:32:51.2739547Z Cloning into 'truth-core'...
+build	Build libtruth_core.so	﻿2025-10-16T21:32:51.5825684Z ##[group]Run cd truth-core
+build	Build libtruth_core.so	2025-10-16T21:32:51.5825978Z [36;1mcd truth-core[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5826346Z [36;1mexport ANDROID_NDK_HOME="${ANDROID_NDK_HOME:-$ANDROID_SDK_ROOT/ndk/26.1.10909125}"[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5826819Z [36;1mexport ANDROID_NDK_ROOT="$ANDROID_NDK_HOME"[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5827130Z [36;1mexport NDK_HOME="$ANDROID_NDK_HOME"[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5827410Z [36;1m./scripts/build-android.sh[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5827819Z [36;1mmkdir -p ../app/src/main/jniLibs/arm64-v8a ../app/src/main/jniLibs/armeabi-v7a[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5828462Z [36;1mcp target/aarch64-linux-android/release/libtruth_core.so ../app/src/main/jniLibs/arm64-v8a/ || true[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5829193Z [36;1mcp target/armv7-linux-androideabi/release/libtruth_core.so ../app/src/main/jniLibs/armeabi-v7a/ || true[0m
+build	Build libtruth_core.so	2025-10-16T21:32:51.5861818Z shell: /usr/bin/bash -e {0}
+build	Build libtruth_core.so	2025-10-16T21:32:51.5862056Z env:
+build	Build libtruth_core.so	2025-10-16T21:32:51.5862341Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Build libtruth_core.so	2025-10-16T21:32:51.5862835Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Build libtruth_core.so	2025-10-16T21:32:51.5863222Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Build libtruth_core.so	2025-10-16T21:32:51.5863673Z   ANDROID_HOME: /usr/local/lib/android/sdk
+build	Build libtruth_core.so	2025-10-16T21:32:51.5864008Z   ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Build libtruth_core.so	2025-10-16T21:32:51.5864366Z   ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Build libtruth_core.so	2025-10-16T21:32:51.5864699Z   NDK_HOME: /usr/local/lib/android/sdk/ndk/26.1.10909125
+build	Build libtruth_core.so	2025-10-16T21:32:51.5864976Z   CARGO_HOME: /home/runner/.cargo
+build	Build libtruth_core.so	2025-10-16T21:32:51.5865205Z   CARGO_INCREMENTAL: 0
+build	Build libtruth_core.so	2025-10-16T21:32:51.5865404Z   CARGO_TERM_COLOR: always
+build	Build libtruth_core.so	2025-10-16T21:32:51.5865605Z ##[endgroup]
+build	Build libtruth_core.so	2025-10-16T21:32:51.5944467Z Building truth_core library for aarch64-linux-android...
+build	Build libtruth_core.so	2025-10-16T21:32:51.7162841Z info: component 'rust-std' for target 'aarch64-linux-android' is up to date
+build	Build libtruth_core.so	2025-10-16T21:32:54.9940934Z [1m[32m    Updating[0m crates.io index
+build	Build libtruth_core.so	2025-10-16T21:32:56.0935769Z [1m[32m Downloading[0m crates ...
+build	Build libtruth_core.so	2025-10-16T21:32:56.2970183Z [1m[32m  Downloaded[0m pin-utils v0.1.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.4077552Z [1m[32m  Downloaded[0m same-file v1.0.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.4164024Z [1m[32m  Downloaded[0m rust-embed-impl v8.7.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.4332897Z [1m[32m  Downloaded[0m scopeguard v1.2.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.4388442Z [1m[32m  Downloaded[0m ryu v1.0.20
+build	Build libtruth_core.so	2025-10-16T21:32:56.4449634Z [1m[32m  Downloaded[0m thiserror v1.0.69
+build	Build libtruth_core.so	2025-10-16T21:32:56.4528018Z [1m[32m  Downloaded[0m serde_core v1.0.228
+build	Build libtruth_core.so	2025-10-16T21:32:56.4591829Z [1m[32m  Downloaded[0m rustls v0.21.12
+build	Build libtruth_core.so	2025-10-16T21:32:56.4725825Z [1m[32m  Downloaded[0m walkdir v2.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.4773040Z [1m[32m  Downloaded[0m stable_deref_trait v1.2.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.4805414Z [1m[32m  Downloaded[0m smallvec v1.15.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.4844165Z [1m[32m  Downloaded[0m yoke v0.8.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.4883406Z [1m[32m  Downloaded[0m time-core v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.5329084Z [1m[32m  Downloaded[0m tokio-macros v2.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.5361202Z [1m[32m  Downloaded[0m serde_urlencoded v0.7.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.5413327Z [1m[32m  Downloaded[0m zstd-safe v5.0.2+zstd.1.5.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.5441090Z [1m[32m  Downloaded[0m zstd v0.13.3
+build	Build libtruth_core.so	2025-10-16T21:32:56.5483724Z [1m[32m  Downloaded[0m zstd v0.11.2+zstd.1.5.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.5526989Z [1m[32m  Downloaded[0m zstd-safe v7.2.4
+build	Build libtruth_core.so	2025-10-16T21:32:56.5554532Z [1m[32m  Downloaded[0m webpki-roots v0.25.4
+build	Build libtruth_core.so	2025-10-16T21:32:56.5601158Z [1m[32m  Downloaded[0m want v0.3.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.5620153Z [1m[32m  Downloaded[0m zerovec-derive v0.11.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.5640449Z [1m[32m  Downloaded[0m zerocopy v0.8.27
+build	Build libtruth_core.so	2025-10-16T21:32:56.5899459Z [1m[32m  Downloaded[0m url v2.5.7
+build	Build libtruth_core.so	2025-10-16T21:32:56.5929669Z [1m[32m  Downloaded[0m tokio-util v0.7.16
+build	Build libtruth_core.so	2025-10-16T21:32:56.6007272Z [1m[32m  Downloaded[0m bzip2-sys v0.1.13+1.0.8
+build	Build libtruth_core.so	2025-10-16T21:32:56.6118858Z [1m[32m  Downloaded[0m brotli v8.0.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.6266966Z [1m[32m  Downloaded[0m tower-service v0.3.3
+build	Build libtruth_core.so	2025-10-16T21:32:56.6277453Z [1m[32m  Downloaded[0m tracing-core v0.1.34
+build	Build libtruth_core.so	2025-10-16T21:32:56.6306939Z [1m[32m  Downloaded[0m syn v1.0.109
+build	Build libtruth_core.so	2025-10-16T21:32:56.6404564Z [1m[32m  Downloaded[0m time v0.3.44
+build	Build libtruth_core.so	2025-10-16T21:32:56.6486671Z [1m[32m  Downloaded[0m zstd-sys v2.0.16+zstd.1.5.7
+build	Build libtruth_core.so	2025-10-16T21:32:56.6655202Z [1m[32m  Downloaded[0m tokio v1.47.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.7065119Z [1m[32m  Downloaded[0m serde_json v1.0.145
+build	Build libtruth_core.so	2025-10-16T21:32:56.7140512Z [1m[32m  Downloaded[0m typenum v1.19.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.7171655Z [1m[32m  Downloaded[0m form_urlencoded v1.2.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.7180306Z [1m[32m  Downloaded[0m env_filter v0.1.3
+build	Build libtruth_core.so	2025-10-16T21:32:56.7193968Z [1m[32m  Downloaded[0m encoding_rs v0.8.35
+build	Build libtruth_core.so	2025-10-16T21:32:56.7394901Z [1m[32m  Downloaded[0m zerovec v0.11.4
+build	Build libtruth_core.so	2025-10-16T21:32:56.7448854Z [1m[32m  Downloaded[0m tracing v0.1.41
+build	Build libtruth_core.so	2025-10-16T21:32:56.7488807Z [1m[32m  Downloaded[0m zerotrie v0.2.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.7524544Z [1m[32m  Downloaded[0m utoipa v4.2.3
+build	Build libtruth_core.so	2025-10-16T21:32:56.7548969Z [1m[32m  Downloaded[0m time-macros v0.2.24
+build	Build libtruth_core.so	2025-10-16T21:32:56.7570665Z [1m[32m  Downloaded[0m serde v1.0.228
+build	Build libtruth_core.so	2025-10-16T21:32:56.7605559Z [1m[32m  Downloaded[0m zip v0.6.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.7647340Z [1m[32m  Downloaded[0m alloc-no-stdlib v2.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:56.7663851Z [1m[32m  Downloaded[0m vcpkg v0.2.15
+build	Build libtruth_core.so	2025-10-16T21:32:56.8201565Z [1m[32m  Downloaded[0m actix-codec v0.5.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.8214773Z [1m[32m  Downloaded[0m untrusted v0.9.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.8231111Z [1m[32m  Downloaded[0m try-lock v0.2.5
+build	Build libtruth_core.so	2025-10-16T21:32:56.8240480Z [1m[32m  Downloaded[0m tracing-attributes v0.1.30
+build	Build libtruth_core.so	2025-10-16T21:32:56.8266836Z [1m[32m  Downloaded[0m thiserror v2.0.17
+build	Build libtruth_core.so	2025-10-16T21:32:56.8329917Z [1m[32m  Downloaded[0m socket2 v0.5.10
+build	Build libtruth_core.so	2025-10-16T21:32:56.8348477Z [1m[32m  Downloaded[0m writeable v0.6.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.8366493Z [1m[32m  Downloaded[0m version_check v0.9.5
+build	Build libtruth_core.so	2025-10-16T21:32:56.8378843Z [1m[32m  Downloaded[0m uuid v1.18.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.8407518Z [1m[32m  Downloaded[0m utf8parse v0.2.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.8417586Z [1m[32m  Downloaded[0m unicase v2.8.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.8431464Z [1m[32m  Downloaded[0m tokio-rustls v0.24.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.8454949Z [1m[32m  Downloaded[0m tinyvec v1.10.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.8480525Z [1m[32m  Downloaded[0m tinystr v0.8.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.8500609Z [1m[32m  Downloaded[0m thiserror-impl v2.0.17
+build	Build libtruth_core.so	2025-10-16T21:32:56.8514925Z [1m[32m  Downloaded[0m synstructure v0.13.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.8525467Z [1m[32m  Downloaded[0m sync_wrapper v0.1.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.8533744Z [1m[32m  Downloaded[0m subtle v2.6.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.8545821Z [1m[32m  Downloaded[0m smol_str v0.2.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.8559810Z [1m[32m  Downloaded[0m simd-adler32 v0.3.7
+build	Build libtruth_core.so	2025-10-16T21:32:56.8577536Z [1m[32m  Downloaded[0m signature v2.2.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.8591812Z [1m[32m  Downloaded[0m signal-hook-registry v1.4.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.8603026Z [1m[32m  Downloaded[0m shlex v1.3.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.8616164Z [1m[32m  Downloaded[0m sha2 v0.10.9
+build	Build libtruth_core.so	2025-10-16T21:32:56.8641577Z [1m[32m  Downloaded[0m sha1 v0.10.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.8657713Z [1m[32m  Downloaded[0m serde_derive v1.0.228
+build	Build libtruth_core.so	2025-10-16T21:32:56.8688236Z [1m[32m  Downloaded[0m semver v1.0.27
+build	Build libtruth_core.so	2025-10-16T21:32:56.8710832Z [1m[32m  Downloaded[0m ring v0.17.14
+build	Build libtruth_core.so	2025-10-16T21:32:56.9131772Z [1m[32m  Downloaded[0m fxhash v0.2.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.9148151Z [1m[32m  Downloaded[0m password-hash v0.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.9165909Z [1m[32m  Downloaded[0m hashlink v0.9.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.9184131Z [1m[32m  Downloaded[0m zeroize v1.8.2
+build	Build libtruth_core.so	2025-10-16T21:32:56.9196507Z [1m[32m  Downloaded[0m zerofrom-derive v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.9206222Z [1m[32m  Downloaded[0m zerofrom v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.9215146Z [1m[32m  Downloaded[0m yoke-derive v0.8.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.9224853Z [1m[32m  Downloaded[0m unicode-xid v0.2.6
+build	Build libtruth_core.so	2025-10-16T21:32:56.9237847Z [1m[32m  Downloaded[0m tinyvec_macros v0.1.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.9246253Z [1m[32m  Downloaded[0m strsim v0.11.1
+build	Build libtruth_core.so	2025-10-16T21:32:56.9259197Z [1m[32m  Downloaded[0m libsqlite3-sys v0.28.0
+build	Build libtruth_core.so	2025-10-16T21:32:56.9837588Z [1m[32m  Downloaded[0m automerge v0.5.12
+build	Build libtruth_core.so	2025-10-16T21:32:56.9978736Z [1m[32m  Downloaded[0m sct v0.7.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.0016651Z [1m[32m  Downloaded[0m curve25519-dalek v4.1.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.0098566Z [1m[32m  Downloaded[0m chrono v0.4.42
+build	Build libtruth_core.so	2025-10-16T21:32:57.0164984Z [1m[32m  Downloaded[0m brotli-decompressor v5.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.0222190Z [1m[32m  Downloaded[0m blake3 v1.8.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.0300889Z [1m[32m  Downloaded[0m aho-corasick v1.1.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.0352604Z [1m[32m  Downloaded[0m actix-web v4.11.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.0458033Z [1m[32m  Downloaded[0m thiserror-impl v1.0.69
+build	Build libtruth_core.so	2025-10-16T21:32:57.0471142Z [1m[32m  Downloaded[0m shellexpand v3.1.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.0488525Z [1m[32m  Downloaded[0m futures-util v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:32:57.0616582Z [1m[32m  Downloaded[0m clap_builder v4.5.48
+build	Build libtruth_core.so	2025-10-16T21:32:57.0679011Z [1m[32m  Downloaded[0m aes v0.8.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.0713005Z [1m[32m  Downloaded[0m actix-http v3.11.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.0795388Z [1m[32m  Downloaded[0m combine v4.6.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.0849420Z [1m[32m  Downloaded[0m utoipa-swagger-ui v5.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.0986946Z [1m[32m  Downloaded[0m utf8_iter v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.0997587Z [1m[32m  Downloaded[0m socket2 v0.6.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.1015953Z [1m[32m  Downloaded[0m unicode-segmentation v1.12.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.1044873Z [1m[32m  Downloaded[0m rust-embed v8.7.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.1128234Z [1m[32m  Downloaded[0m regex-automata v0.4.11
+build	Build libtruth_core.so	2025-10-16T21:32:57.1277540Z [1m[32m  Downloaded[0m libc v0.2.176
+build	Build libtruth_core.so	2025-10-16T21:32:57.1548192Z [1m[32m  Downloaded[0m utoipa-gen v4.3.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.1602382Z [1m[32m  Downloaded[0m jiff v0.2.15
+build	Build libtruth_core.so	2025-10-16T21:32:57.1752634Z [1m[32m  Downloaded[0m ed25519-dalek v2.2.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.1782593Z [1m[32m  Downloaded[0m cc v1.2.40
+build	Build libtruth_core.so	2025-10-16T21:32:57.1811058Z [1m[32m  Downloaded[0m bytes v1.10.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.1851781Z [1m[32m  Downloaded[0m base64 v0.22.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.1889330Z [1m[32m  Downloaded[0m sized-chunks v0.6.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.1914556Z [1m[32m  Downloaded[0m derive_more-impl v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.1961532Z [1m[32m  Downloaded[0m base64 v0.21.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.1998918Z [1m[32m  Downloaded[0m actix-server v2.6.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.2021654Z [1m[32m  Downloaded[0m slab v0.4.11
+build	Build libtruth_core.so	2025-10-16T21:32:57.2033790Z [1m[32m  Downloaded[0m simple_asn1 v0.6.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.2046660Z [1m[32m  Downloaded[0m clap v4.5.48
+build	Build libtruth_core.so	2025-10-16T21:32:57.2141802Z [1m[32m  Downloaded[0m unicode-ident v1.0.19
+build	Build libtruth_core.so	2025-10-16T21:32:57.2168561Z [1m[32m  Downloaded[0m syn v2.0.106
+build	Build libtruth_core.so	2025-10-16T21:32:57.2272360Z [1m[32m  Downloaded[0m spki v0.7.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.2289592Z [1m[32m  Downloaded[0m getrandom v0.3.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.2321864Z [1m[32m  Downloaded[0m gcc v0.3.55
+build	Build libtruth_core.so	2025-10-16T21:32:57.2339809Z [1m[32m  Downloaded[0m futures-channel v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:32:57.2357511Z [1m[32m  Downloaded[0m flate2 v1.1.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.2403915Z [1m[32m  Downloaded[0m find-msvc-tools v0.1.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.2418787Z [1m[32m  Downloaded[0m env_logger v0.11.8
+build	Build libtruth_core.so	2025-10-16T21:32:57.2443249Z [1m[32m  Downloaded[0m displaydoc v0.2.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.2472628Z [1m[32m  Downloaded[0m derive_more v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.2567097Z [1m[32m  Downloaded[0m derive_more v0.99.20
+build	Build libtruth_core.so	2025-10-16T21:32:57.2613009Z [1m[32m  Downloaded[0m der v0.7.10
+build	Build libtruth_core.so	2025-10-16T21:32:57.2664252Z [1m[32m  Downloaded[0m crc32fast v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.2682235Z [1m[32m  Downloaded[0m const-oid v0.9.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.2700316Z [1m[32m  Downloaded[0m bzip2 v0.4.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.2717145Z [1m[32m  Downloaded[0m blake2 v0.10.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.2741867Z [1m[32m  Downloaded[0m bitflags v2.9.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.2781799Z [1m[32m  Downloaded[0m arrayvec v0.7.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.2801102Z [1m[32m  Downloaded[0m anyhow v1.0.100
+build	Build libtruth_core.so	2025-10-16T21:32:57.2841352Z [1m[32m  Downloaded[0m anstyle-query v1.1.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.2852631Z [1m[32m  Downloaded[0m ahash v0.8.12
+build	Build libtruth_core.so	2025-10-16T21:32:57.2875754Z [1m[32m  Downloaded[0m regex-syntax v0.8.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.2945278Z [1m[32m  Downloaded[0m clap_derive v4.5.47
+build	Build libtruth_core.so	2025-10-16T21:32:57.2966348Z [1m[32m  Downloaded[0m base64ct v1.7.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.2990096Z [1m[32m  Downloaded[0m rustls-webpki v0.101.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.3148527Z [1m[32m  Downloaded[0m reqwest v0.11.27
+build	Build libtruth_core.so	2025-10-16T21:32:57.3218363Z [1m[32m  Downloaded[0m regex v1.11.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.3281464Z [1m[32m  Downloaded[0m itertools v0.13.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.3348410Z [1m[32m  Downloaded[0m idna v1.1.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.3383795Z [1m[32m  Downloaded[0m icu_properties_data v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.3480779Z [1m[32m  Downloaded[0m hyper v0.14.32
+build	Build libtruth_core.so	2025-10-16T21:32:57.3556631Z [1m[32m  Downloaded[0m hashbrown v0.16.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.3608208Z [1m[32m  Downloaded[0m hashbrown v0.14.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.3655195Z [1m[32m  Downloaded[0m getrandom v0.2.16
+build	Build libtruth_core.so	2025-10-16T21:32:57.3683291Z [1m[32m  Downloaded[0m futures-task v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:32:57.3694505Z [1m[32m  Downloaded[0m futures-core v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:32:57.3707029Z [1m[32m  Downloaded[0m deranged v0.5.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.3719831Z [1m[32m  Downloaded[0m cesu8 v1.1.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.3728584Z [1m[32m  Downloaded[0m actix-service v2.0.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.3748681Z [1m[32m  Downloaded[0m actix-router v0.5.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.3766357Z [1m[32m  Downloaded[0m rusqlite v0.31.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.3824277Z [1m[32m  Downloaded[0m regex-lite v0.1.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.3851519Z [1m[32m  Downloaded[0m rand v0.9.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.3888806Z [1m[32m  Downloaded[0m num-bigint v0.4.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.3934917Z [1m[32m  Downloaded[0m mio v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.3992599Z [1m[32m  Downloaded[0m memchr v2.7.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.4045882Z [1m[32m  Downloaded[0m jni v0.21.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4111704Z [1m[32m  Downloaded[0m indexmap v2.11.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.4152786Z [1m[32m  Downloaded[0m icu_properties v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4175091Z [1m[32m  Downloaded[0m icu_normalizer v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4207722Z [1m[32m  Downloaded[0m icu_locale_core v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4276713Z [1m[32m  Downloaded[0m http v0.2.12
+build	Build libtruth_core.so	2025-10-16T21:32:57.4311776Z [1m[32m  Downloaded[0m hmac v0.12.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4330600Z [1m[32m  Downloaded[0m generic-array v0.14.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.4344268Z [1m[32m  Downloaded[0m cpufeatures v0.2.17
+build	Build libtruth_core.so	2025-10-16T21:32:57.4357526Z [1m[32m  Downloaded[0m convert_case v0.4.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4365948Z [1m[32m  Downloaded[0m cipher v0.4.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.4380063Z [1m[32m  Downloaded[0m actix-rt v2.11.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4394659Z [1m[32m  Downloaded[0m actix-macros v0.2.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.4413025Z [1m[32m  Downloaded[0m rustc_version v0.4.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4425251Z [1m[32m  Downloaded[0m rand_xoshiro v0.6.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4443935Z [1m[32m  Downloaded[0m rand v0.8.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.4477061Z [1m[32m  Downloaded[0m proc-macro2 v1.0.101
+build	Build libtruth_core.so	2025-10-16T21:32:57.4503922Z [1m[32m  Downloaded[0m pkcs8 v0.10.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.4531111Z [1m[32m  Downloaded[0m pin-project-lite v0.2.16
+build	Build libtruth_core.so	2025-10-16T21:32:57.4590626Z [1m[32m  Downloaded[0m pbkdf2 v0.11.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4614099Z [1m[32m  Downloaded[0m password-hash v0.4.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.4630695Z [1m[32m  Downloaded[0m once_cell v1.21.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.4655046Z [1m[32m  Downloaded[0m num-integer v0.1.46
+build	Build libtruth_core.so	2025-10-16T21:32:57.4670226Z [1m[32m  Downloaded[0m num-conv v0.1.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4677925Z [1m[32m  Downloaded[0m miniz_oxide v0.8.9
+build	Build libtruth_core.so	2025-10-16T21:32:57.4702135Z [1m[32m  Downloaded[0m local-channel v0.1.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.4710223Z [1m[32m  Downloaded[0m litemap v0.8.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4731767Z [1m[32m  Downloaded[0m jsonwebtoken v9.3.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4773956Z [1m[32m  Downloaded[0m jobserver v0.1.34
+build	Build libtruth_core.so	2025-10-16T21:32:57.4793083Z [1m[32m  Downloaded[0m is_terminal_polyfill v1.70.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4801657Z [1m[32m  Downloaded[0m icu_normalizer_data v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4821952Z [1m[32m  Downloaded[0m icu_collections v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.4882624Z [1m[32m  Downloaded[0m iana-time-zone v0.1.64
+build	Build libtruth_core.so	2025-10-16T21:32:57.4909059Z [1m[32m  Downloaded[0m httpdate v1.0.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.4920333Z [1m[32m  Downloaded[0m httparse v1.10.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.4944821Z [1m[32m  Downloaded[0m get_if_addrs v0.5.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.4955970Z [1m[32m  Downloaded[0m foldhash v0.1.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.4967546Z [1m[32m  Downloaded[0m fnv v1.0.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.4975876Z [1m[32m  Downloaded[0m fallible-streaming-iterator v0.1.9
+build	Build libtruth_core.so	2025-10-16T21:32:57.4984244Z [1m[32m  Downloaded[0m equivalent v1.0.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.4993648Z [1m[32m  Downloaded[0m ed25519 v2.2.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.5010378Z [1m[32m  Downloaded[0m dirs-sys v0.4.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5021797Z [1m[32m  Downloaded[0m digest v0.10.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.5039095Z [1m[32m  Downloaded[0m curve25519-dalek-derive v0.1.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5048825Z [1m[32m  Downloaded[0m colorchoice v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5057923Z [1m[32m  Downloaded[0m bytestring v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5067110Z [1m[32m  Downloaded[0m arrayref v0.3.9
+build	Build libtruth_core.so	2025-10-16T21:32:57.5079341Z [1m[32m  Downloaded[0m argon2 v0.5.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.5095012Z [1m[32m  Downloaded[0m anstyle-parse v0.2.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.5110199Z [1m[32m  Downloaded[0m anstyle v1.0.13
+build	Build libtruth_core.so	2025-10-16T21:32:57.5123843Z [1m[32m  Downloaded[0m adler2 v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5135610Z [1m[32m  Downloaded[0m scheduled-thread-pool v0.2.7
+build	Build libtruth_core.so	2025-10-16T21:32:57.5146391Z [1m[32m  Downloaded[0m rand_core v0.6.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5159071Z [1m[32m  Downloaded[0m rand_chacha v0.9.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5170262Z [1m[32m  Downloaded[0m r2d2_sqlite v0.24.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5182262Z [1m[32m  Downloaded[0m r2d2 v0.8.10
+build	Build libtruth_core.so	2025-10-16T21:32:57.5195957Z [1m[32m  Downloaded[0m quote v1.0.41
+build	Build libtruth_core.so	2025-10-16T21:32:57.5222950Z [1m[32m  Downloaded[0m proc-macro-error-attr v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5232061Z [1m[32m  Downloaded[0m proc-macro-error v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5265740Z [1m[32m  Downloaded[0m ppv-lite86 v0.2.21
+build	Build libtruth_core.so	2025-10-16T21:32:57.5278091Z [1m[32m  Downloaded[0m powerfmt v0.2.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5288623Z [1m[32m  Downloaded[0m potential_utf v0.1.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.5298063Z [1m[32m  Downloaded[0m pkg-config v0.3.32
+build	Build libtruth_core.so	2025-10-16T21:32:57.5313041Z [1m[32m  Downloaded[0m percent-encoding v2.3.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.5321108Z [1m[32m  Downloaded[0m pem v3.0.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.5334386Z [1m[32m  Downloaded[0m parking_lot_core v0.9.12
+build	Build libtruth_core.so	2025-10-16T21:32:57.5354566Z [1m[32m  Downloaded[0m option-ext v0.2.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5362160Z [1m[32m  Downloaded[0m mime v0.3.17
+build	Build libtruth_core.so	2025-10-16T21:32:57.5374479Z [1m[32m  Downloaded[0m lock_api v0.4.14
+build	Build libtruth_core.so	2025-10-16T21:32:57.5387712Z [1m[32m  Downloaded[0m leb128 v0.2.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.5400931Z [1m[32m  Downloaded[0m inout v0.1.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5411196Z [1m[32m  Downloaded[0m idna_adapter v1.2.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5419939Z [1m[32m  Downloaded[0m hyper-rustls v0.24.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.5444222Z [1m[32m  Downloaded[0m heck v0.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5456288Z [1m[32m  Downloaded[0m get_if_addrs-sys v0.1.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5464426Z [1m[32m  Downloaded[0m either v1.15.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5478043Z [1m[32m  Downloaded[0m dirs v5.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5489928Z [1m[32m  Downloaded[0m crypto-common v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.5498348Z [1m[32m  Downloaded[0m cookie v0.16.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.5520708Z [1m[32m  Downloaded[0m constant_time_eq v0.1.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.5529387Z [1m[32m  Downloaded[0m bitmaps v2.1.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5541204Z [1m[32m  Downloaded[0m anstream v0.6.21
+build	Build libtruth_core.so	2025-10-16T21:32:57.5560901Z [1m[32m  Downloaded[0m android_system_properties v0.1.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.5582606Z [1m[32m  Downloaded[0m alloc-stdlib v0.2.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.5584313Z [1m[32m  Downloaded[0m actix-utils v3.0.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5592902Z [1m[32m  Downloaded[0m actix-cors v0.6.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.5608560Z [1m[32m  Downloaded[0m rand_core v0.9.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.5621812Z [1m[32m  Downloaded[0m parking_lot v0.12.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.5646082Z [1m[32m  Downloaded[0m local-waker v0.1.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5653933Z [1m[32m  Downloaded[0m im v15.1.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5694167Z [1m[32m  Downloaded[0m icu_provider v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5719292Z [1m[32m  Downloaded[0m hex v0.4.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.5734908Z [1m[32m  Downloaded[0m h2 v0.3.27
+build	Build libtruth_core.so	2025-10-16T21:32:57.5796654Z [1m[32m  Downloaded[0m futures-sink v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:32:57.5805041Z [1m[32m  Downloaded[0m fallible-iterator v0.3.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5817208Z [1m[32m  Downloaded[0m constant_time_eq v0.3.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5829982Z [1m[32m  Downloaded[0m clap_lex v0.7.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.5840521Z [1m[32m  Downloaded[0m cfg-if v1.0.3
+build	Build libtruth_core.so	2025-10-16T21:32:57.5853237Z [1m[32m  Downloaded[0m byteorder v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5869100Z [1m[32m  Downloaded[0m block-buffer v0.10.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5879335Z [1m[32m  Downloaded[0m autocfg v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5897858Z [1m[32m  Downloaded[0m actix-web-codegen v4.3.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.5925901Z [1m[32m  Downloaded[0m rustls-pemfile v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:32:57.5947963Z [1m[32m  Downloaded[0m rust-embed-utils v8.7.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.5955871Z [1m[32m  Downloaded[0m rand_chacha v0.3.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.5966814Z [1m[32m  Downloaded[0m num-traits v0.2.19
+build	Build libtruth_core.so	2025-10-16T21:32:57.5992175Z [1m[32m  Downloaded[0m mime_guess v2.0.5
+build	Build libtruth_core.so	2025-10-16T21:32:57.6008645Z [1m[32m  Downloaded[0m log v0.4.28
+build	Build libtruth_core.so	2025-10-16T21:32:57.6033250Z [1m[32m  Downloaded[0m language-tags v0.3.2
+build	Build libtruth_core.so	2025-10-16T21:32:57.6054572Z [1m[32m  Downloaded[0m jni-sys v0.3.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.6064111Z [1m[32m  Downloaded[0m itoa v1.0.15
+build	Build libtruth_core.so	2025-10-16T21:32:57.6078414Z [1m[32m  Downloaded[0m ipnet v2.11.0
+build	Build libtruth_core.so	2025-10-16T21:32:57.6094119Z [1m[32m  Downloaded[0m impl-more v0.1.9
+build	Build libtruth_core.so	2025-10-16T21:32:57.6115669Z [1m[32m  Downloaded[0m http-body v0.4.6
+build	Build libtruth_core.so	2025-10-16T21:32:57.6132327Z [1m[32m  Downloaded[0m c_linked_list v1.1.1
+build	Build libtruth_core.so	2025-10-16T21:32:57.8163302Z [1m[32m   Compiling[0m proc-macro2 v1.0.101
+build	Build libtruth_core.so	2025-10-16T21:32:57.8166357Z [1m[32m   Compiling[0m unicode-ident v1.0.19
+build	Build libtruth_core.so	2025-10-16T21:32:57.8166950Z [1m[32m   Compiling[0m quote v1.0.41
+build	Build libtruth_core.so	2025-10-16T21:32:57.8167435Z [1m[32m   Compiling[0m libc v0.2.176
+build	Build libtruth_core.so	2025-10-16T21:33:01.6980137Z [1m[32m   Compiling[0m version_check v0.9.5
+build	Build libtruth_core.so	2025-10-16T21:33:02.7004370Z [1m[32m   Compiling[0m cfg-if v1.0.3
+build	Build libtruth_core.so	2025-10-16T21:33:03.2618997Z [1m[32m   Compiling[0m typenum v1.19.0
+build	Build libtruth_core.so	2025-10-16T21:33:04.6680947Z [1m[32m   Compiling[0m generic-array v0.14.7
+build	Build libtruth_core.so	2025-10-16T21:33:04.7573980Z [1m[32m   Compiling[0m zerocopy v0.8.27
+build	Build libtruth_core.so	2025-10-16T21:33:05.0087230Z [1m[32m   Compiling[0m smallvec v1.15.1
+build	Build libtruth_core.so	2025-10-16T21:33:06.3826860Z [1m[32m   Compiling[0m syn v2.0.106
+build	Build libtruth_core.so	2025-10-16T21:33:06.5298867Z [1m[32m   Compiling[0m stable_deref_trait v1.2.0
+build	Build libtruth_core.so	2025-10-16T21:33:06.5662574Z [1m[32m   Compiling[0m subtle v2.6.1
+build	Build libtruth_core.so	2025-10-16T21:33:06.6753268Z [1m[32m   Compiling[0m serde_core v1.0.228
+build	Build libtruth_core.so	2025-10-16T21:33:06.8661571Z [1m[32m   Compiling[0m bytes v1.10.1
+build	Build libtruth_core.so	2025-10-16T21:33:07.1691673Z [1m[32m   Compiling[0m crypto-common v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:33:07.2527076Z [1m[32m   Compiling[0m block-buffer v0.10.4
+build	Build libtruth_core.so	2025-10-16T21:33:07.3458585Z [1m[32m   Compiling[0m pin-project-lite v0.2.16
+build	Build libtruth_core.so	2025-10-16T21:33:07.3946218Z [1m[32m   Compiling[0m once_cell v1.21.3
+build	Build libtruth_core.so	2025-10-16T21:33:07.6424469Z [1m[32m   Compiling[0m digest v0.10.7
+build	Build libtruth_core.so	2025-10-16T21:33:08.2568612Z [1m[32m   Compiling[0m log v0.4.28
+build	Build libtruth_core.so	2025-10-16T21:33:08.5363830Z [1m[32m   Compiling[0m serde v1.0.228
+build	Build libtruth_core.so	2025-10-16T21:33:08.6949653Z [1m[32m   Compiling[0m parking_lot_core v0.9.12
+build	Build libtruth_core.so	2025-10-16T21:33:08.8484863Z [1m[32m   Compiling[0m futures-core v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:33:08.8869817Z [1m[32m   Compiling[0m itoa v1.0.15
+build	Build libtruth_core.so	2025-10-16T21:33:08.9427491Z [1m[32m   Compiling[0m scopeguard v1.2.0
+build	Build libtruth_core.so	2025-10-16T21:33:08.9748523Z [1m[32m   Compiling[0m getrandom v0.3.3
+build	Build libtruth_core.so	2025-10-16T21:33:08.9918408Z [1m[32m   Compiling[0m lock_api v0.4.14
+build	Build libtruth_core.so	2025-10-16T21:33:09.6373689Z [1m[32m   Compiling[0m ppv-lite86 v0.2.21
+build	Build libtruth_core.so	2025-10-16T21:33:09.7919340Z [1m[32m   Compiling[0m synstructure v0.13.2
+build	Build libtruth_core.so	2025-10-16T21:33:09.9191494Z [1m[32m   Compiling[0m cpufeatures v0.2.17
+build	Build libtruth_core.so	2025-10-16T21:33:09.9698765Z [1m[32m   Compiling[0m memchr v2.7.6
+build	Build libtruth_core.so	2025-10-16T21:33:10.3955550Z [1m[32m   Compiling[0m litemap v0.8.0
+build	Build libtruth_core.so	2025-10-16T21:33:10.5163866Z [1m[32m   Compiling[0m writeable v0.6.1
+build	Build libtruth_core.so	2025-10-16T21:33:10.5957404Z [1m[32m   Compiling[0m shlex v1.3.0
+build	Build libtruth_core.so	2025-10-16T21:33:10.7070842Z [1m[32m   Compiling[0m find-msvc-tools v0.1.3
+build	Build libtruth_core.so	2025-10-16T21:33:10.9414627Z [1m[32m   Compiling[0m cc v1.2.40
+build	Build libtruth_core.so	2025-10-16T21:33:11.3976621Z [1m[32m   Compiling[0m zerofrom-derive v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:33:11.6285249Z [1m[32m   Compiling[0m yoke-derive v0.8.0
+build	Build libtruth_core.so	2025-10-16T21:33:11.6660754Z [1m[32m   Compiling[0m zerovec-derive v0.11.1
+build	Build libtruth_core.so	2025-10-16T21:33:12.3176904Z [1m[32m   Compiling[0m displaydoc v0.2.5
+build	Build libtruth_core.so	2025-10-16T21:33:12.6068017Z [1m[32m   Compiling[0m zerofrom v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:33:12.6101634Z [1m[32m   Compiling[0m serde_derive v1.0.228
+build	Build libtruth_core.so	2025-10-16T21:33:12.6405160Z [1m[32m   Compiling[0m aho-corasick v1.1.3
+build	Build libtruth_core.so	2025-10-16T21:33:12.6932355Z [1m[32m   Compiling[0m yoke v0.8.0
+build	Build libtruth_core.so	2025-10-16T21:33:12.7807071Z [1m[32m   Compiling[0m parking_lot v0.12.5
+build	Build libtruth_core.so	2025-10-16T21:33:12.9012525Z [1m[32m   Compiling[0m zerovec v0.11.4
+build	Build libtruth_core.so	2025-10-16T21:33:13.8098750Z [1m[32m   Compiling[0m zerotrie v0.2.2
+build	Build libtruth_core.so	2025-10-16T21:33:14.1424804Z [1m[32m   Compiling[0m tinystr v0.8.1
+build	Build libtruth_core.so	2025-10-16T21:33:14.2658391Z [1m[32m   Compiling[0m potential_utf v0.1.3
+build	Build libtruth_core.so	2025-10-16T21:33:14.3157486Z [1m[32m   Compiling[0m icu_locale_core v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:33:14.6209207Z [1m[32m   Compiling[0m mio v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:33:14.7705278Z [1m[32m   Compiling[0m signal-hook-registry v1.4.6
+build	Build libtruth_core.so	2025-10-16T21:33:15.3558269Z [1m[32m   Compiling[0m socket2 v0.6.0
+build	Build libtruth_core.so	2025-10-16T21:33:15.4523106Z [1m[32m   Compiling[0m icu_normalizer_data v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:33:15.5418397Z [1m[32m   Compiling[0m icu_properties_data v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:15.6310046Z [1m[32m   Compiling[0m regex-syntax v0.8.6
+build	Build libtruth_core.so	2025-10-16T21:33:16.2871394Z [1m[32m   Compiling[0m tokio v1.47.1
+build	Build libtruth_core.so	2025-10-16T21:33:16.4132481Z [1m[32m   Compiling[0m icu_provider v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:33:16.7659738Z [1m[32m   Compiling[0m rand_core v0.9.3
+build	Build libtruth_core.so	2025-10-16T21:33:16.9959716Z [1m[32m   Compiling[0m icu_collections v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:33:17.6122813Z [1m[32m   Compiling[0m regex-automata v0.4.11
+build	Build libtruth_core.so	2025-10-16T21:33:17.7315342Z [1m[32m   Compiling[0m tracing-attributes v0.1.30
+build	Build libtruth_core.so	2025-10-16T21:33:18.0410620Z [1m[32m   Compiling[0m tracing-core v0.1.34
+build	Build libtruth_core.so	2025-10-16T21:33:18.8571301Z [1m[32m   Compiling[0m getrandom v0.2.16
+build	Build libtruth_core.so	2025-10-16T21:33:19.0585999Z [1m[32m   Compiling[0m proc-macro-error-attr v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:33:19.1296769Z [1m[32m   Compiling[0m syn v1.0.109
+build	Build libtruth_core.so	2025-10-16T21:33:19.1797543Z [1m[32m   Compiling[0m crc32fast v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:33:19.3445860Z [1m[32m   Compiling[0m rand_core v0.6.4
+build	Build libtruth_core.so	2025-10-16T21:33:19.5342921Z [1m[32m   Compiling[0m regex v1.11.3
+build	Build libtruth_core.so	2025-10-16T21:33:19.9308907Z [1m[32m   Compiling[0m tracing v0.1.41
+build	Build libtruth_core.so	2025-10-16T21:33:20.2756098Z [1m[32m   Compiling[0m rand_chacha v0.9.0
+build	Build libtruth_core.so	2025-10-16T21:33:20.7038489Z [1m[32m   Compiling[0m ahash v0.8.12
+build	Build libtruth_core.so	2025-10-16T21:33:20.7370236Z [1m[32m   Compiling[0m proc-macro-error v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:33:20.7933278Z [1m[32m   Compiling[0m futures-sink v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:33:20.8197141Z [1m[32m   Compiling[0m semver v1.0.27
+build	Build libtruth_core.so	2025-10-16T21:33:20.8551185Z [1m[32m   Compiling[0m adler2 v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:20.9169601Z [1m[32m   Compiling[0m serde_json v1.0.145
+build	Build libtruth_core.so	2025-10-16T21:33:21.0021310Z [1m[32m   Compiling[0m bitflags v2.9.4
+build	Build libtruth_core.so	2025-10-16T21:33:21.0397436Z [1m[32m   Compiling[0m ryu v1.0.20
+build	Build libtruth_core.so	2025-10-16T21:33:21.3231111Z [1m[32m   Compiling[0m simd-adler32 v0.3.7
+build	Build libtruth_core.so	2025-10-16T21:33:21.4157271Z [1m[32m   Compiling[0m option-ext v0.2.0
+build	Build libtruth_core.so	2025-10-16T21:33:21.4562024Z [1m[32m   Compiling[0m percent-encoding v2.3.2
+build	Build libtruth_core.so	2025-10-16T21:33:21.5306682Z [1m[32m   Compiling[0m local-waker v0.1.4
+build	Build libtruth_core.so	2025-10-16T21:33:21.5833014Z [1m[32m   Compiling[0m miniz_oxide v0.8.9
+build	Build libtruth_core.so	2025-10-16T21:33:21.6587176Z [1m[32m   Compiling[0m dirs-sys v0.4.1
+build	Build libtruth_core.so	2025-10-16T21:33:21.8377574Z [1m[32m   Compiling[0m rustc_version v0.4.1
+build	Build libtruth_core.so	2025-10-16T21:33:22.0515652Z [1m[32m   Compiling[0m icu_properties v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:22.1118879Z [1m[32m   Compiling[0m icu_normalizer v2.0.0
+build	Build libtruth_core.so	2025-10-16T21:33:22.1386470Z [1m[32m   Compiling[0m rand v0.9.2
+build	Build libtruth_core.so	2025-10-16T21:33:23.7225747Z [1m[32m   Compiling[0m sha2 v0.10.9
+build	Build libtruth_core.so	2025-10-16T21:33:23.8783027Z [1m[32m   Compiling[0m vcpkg v0.2.15
+build	Build libtruth_core.so	2025-10-16T21:33:23.9954834Z [1m[32m   Compiling[0m pkg-config v0.3.32
+build	Build libtruth_core.so	2025-10-16T21:33:24.4607649Z [1m[32m   Compiling[0m fnv v1.0.7
+build	Build libtruth_core.so	2025-10-16T21:33:24.5103359Z [1m[32m   Compiling[0m powerfmt v0.2.0
+build	Build libtruth_core.so	2025-10-16T21:33:24.5419345Z [1m[32m   Compiling[0m autocfg v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:33:24.7284677Z [1m[32m   Compiling[0m httparse v1.10.1
+build	Build libtruth_core.so	2025-10-16T21:33:24.8462114Z [1m[32m   Compiling[0m same-file v1.0.6
+build	Build libtruth_core.so	2025-10-16T21:33:24.9091751Z [1m[32m   Compiling[0m unicode-xid v0.2.6
+build	Build libtruth_core.so	2025-10-16T21:33:24.9400544Z [1m[32m   Compiling[0m walkdir v2.5.0
+build	Build libtruth_core.so	2025-10-16T21:33:24.9472249Z [1m[32m   Compiling[0m num-traits v0.2.19
+build	Build libtruth_core.so	2025-10-16T21:33:24.9674860Z [1m[32m   Compiling[0m derive_more-impl v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:25.0316447Z [1m[32m   Compiling[0m deranged v0.5.4
+build	Build libtruth_core.so	2025-10-16T21:33:25.5283818Z [1m[32m   Compiling[0m libsqlite3-sys v0.28.0
+build	Build libtruth_core.so	2025-10-16T21:33:25.7820650Z [1m[32m   Compiling[0m http v0.2.12
+build	Build libtruth_core.so	2025-10-16T21:33:26.4696778Z [1m[32m   Compiling[0m idna_adapter v1.2.1
+build	Build libtruth_core.so	2025-10-16T21:33:26.5362617Z [1m[32m   Compiling[0m flate2 v1.1.4
+build	Build libtruth_core.so	2025-10-16T21:33:26.8888081Z [1m[32m   Compiling[0m curve25519-dalek v4.1.3
+build	Build libtruth_core.so	2025-10-16T21:33:27.8153300Z [1m[32m   Compiling[0m dirs v5.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:27.8754442Z [1m[32m   Compiling[0m actix-utils v3.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:27.8931368Z [1m[32m   Compiling[0m form_urlencoded v1.2.2
+build	Build libtruth_core.so	2025-10-16T21:33:27.9781259Z [1m[32m   Compiling[0m actix-rt v2.11.0
+build	Build libtruth_core.so	2025-10-16T21:33:28.0894176Z [1m[32m   Compiling[0m tokio-util v0.7.16
+build	Build libtruth_core.so	2025-10-16T21:33:28.1809993Z [1m[32m   Compiling[0m actix-service v2.0.3
+build	Build libtruth_core.so	2025-10-16T21:33:28.5904889Z [1m[32m   Compiling[0m bytestring v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:33:28.7274429Z [1m[32m   Compiling[0m thiserror v1.0.69
+build	Build libtruth_core.so	2025-10-16T21:33:28.8891921Z [1m[32m   Compiling[0m pin-utils v0.1.0
+build	Build libtruth_core.so	2025-10-16T21:33:28.9266412Z [1m[32m   Compiling[0m byteorder v1.5.0
+build	Build libtruth_core.so	2025-10-16T21:33:29.1179062Z [1m[32m   Compiling[0m utf8_iter v1.0.4
+build	Build libtruth_core.so	2025-10-16T21:33:29.2111152Z [1m[32m   Compiling[0m equivalent v1.0.2
+build	Build libtruth_core.so	2025-10-16T21:33:29.2282856Z [1m[32m   Compiling[0m futures-task v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:33:29.2539583Z [1m[32m   Compiling[0m time-core v0.1.6
+build	Build libtruth_core.so	2025-10-16T21:33:29.3407792Z [1m[32m   Compiling[0m hashbrown v0.16.0
+build	Build libtruth_core.so	2025-10-16T21:33:29.3751183Z [1m[32m   Compiling[0m num-conv v0.1.0
+build	Build libtruth_core.so	2025-10-16T21:33:29.4762862Z [1m[32m   Compiling[0m mime v0.3.17
+build	Build libtruth_core.so	2025-10-16T21:33:29.9848033Z [1m[32m   Compiling[0m unicase v2.8.1
+build	Build libtruth_core.so	2025-10-16T21:33:30.1157273Z [1m[32m   Compiling[0m mime_guess v2.0.5
+build	Build libtruth_core.so	2025-10-16T21:33:30.3545053Z [1m[32m   Compiling[0m indexmap v2.11.4
+build	Build libtruth_core.so	2025-10-16T21:33:30.4739636Z [1m[32m   Compiling[0m time v0.3.44
+build	Build libtruth_core.so	2025-10-16T21:33:31.0640285Z [1m[32m   Compiling[0m futures-util v0.3.31
+build	Build libtruth_core.so	2025-10-16T21:33:31.3237944Z [1m[32m   Compiling[0m idna v1.1.0
+build	Build libtruth_core.so	2025-10-16T21:33:32.0169163Z [1m[32m   Compiling[0m zip v0.6.6
+build	Build libtruth_core.so	2025-10-16T21:33:32.6315708Z [1m[32m   Compiling[0m actix-codec v0.5.2
+build	Build libtruth_core.so	2025-10-16T21:33:32.9272312Z [1m[32m   Compiling[0m derive_more v2.0.1
+build	Build libtruth_core.so	2025-10-16T21:33:32.9839868Z [1m[32m   Compiling[0m shellexpand v3.1.1
+build	Build libtruth_core.so	2025-10-16T21:33:33.0900344Z [1m[32m   Compiling[0m hashbrown v0.14.5
+build	Build libtruth_core.so	2025-10-16T21:33:33.1104926Z [1m[32m   Compiling[0m utoipa-gen v4.3.1
+build	Build libtruth_core.so	2025-10-16T21:33:33.1492651Z [1m[33mwarning[0m[1m:[0m libsqlite3-sys@0.28.0: Compiler family detection failed due to error: ToolNotFound: failed to find tool "aarch64-linux-android29-clang": No such file or directory (os error 2)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1495228Z [1m[31merror[0m[1m:[0m failed to run custom build command for `libsqlite3-sys v0.28.0`
+build	Build libtruth_core.so	2025-10-16T21:33:33.1495690Z 
+build	Build libtruth_core.so	2025-10-16T21:33:33.1495803Z Caused by:
+build	Build libtruth_core.so	2025-10-16T21:33:33.1497723Z   process didn't exit successfully: `/home/runner/work/truth-android-client/truth-android-client/truth-core/target/release/build/libsqlite3-sys-426ecd550bf92655/build-script-build` (exit status: 1)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1499032Z   --- stdout
+build	Build libtruth_core.so	2025-10-16T21:33:33.1499404Z   cargo:rerun-if-env-changed=LIBSQLITE3_SYS_USE_PKG_CONFIG
+build	Build libtruth_core.so	2025-10-16T21:33:33.1500236Z   cargo:include=/home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libsqlite3-sys-0.28.0/sqlite3
+build	Build libtruth_core.so	2025-10-16T21:33:33.1501028Z   cargo:rerun-if-changed=sqlite3/sqlite3.c
+build	Build libtruth_core.so	2025-10-16T21:33:33.1501510Z   cargo:rerun-if-changed=sqlite3/wasm32-wasi-vfs.c
+build	Build libtruth_core.so	2025-10-16T21:33:33.1502038Z   cargo:rerun-if-env-changed=SQLITE_MAX_VARIABLE_NUMBER
+build	Build libtruth_core.so	2025-10-16T21:33:33.1502575Z   cargo:rerun-if-env-changed=SQLITE_MAX_EXPR_DEPTH
+build	Build libtruth_core.so	2025-10-16T21:33:33.1503071Z   cargo:rerun-if-env-changed=SQLITE_MAX_COLUMN
+build	Build libtruth_core.so	2025-10-16T21:33:33.1503734Z   cargo:rerun-if-env-changed=LIBSQLITE3_FLAGS
+build	Build libtruth_core.so	2025-10-16T21:33:33.1504925Z   OUT_DIR = Some(/home/runner/work/truth-android-client/truth-android-client/truth-core/target/aarch64-linux-android/release/build/libsqlite3-sys-f120e3485833dda9/out)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1506071Z   OPT_LEVEL = Some(3)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1506425Z   TARGET = Some(aarch64-linux-android)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1506862Z   CARGO_ENCODED_RUSTFLAGS = Some()
+build	Build libtruth_core.so	2025-10-16T21:33:33.1507272Z   HOST = Some(x86_64-unknown-linux-gnu)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1507770Z   cargo:rerun-if-env-changed=CC_aarch64-linux-android
+build	Build libtruth_core.so	2025-10-16T21:33:33.1508260Z   CC_aarch64-linux-android = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1508728Z   cargo:rerun-if-env-changed=CC_aarch64_linux_android
+build	Build libtruth_core.so	2025-10-16T21:33:33.1509334Z   CC_aarch64_linux_android = Some(aarch64-linux-android29-clang)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1509930Z   cargo:rerun-if-env-changed=CC_KNOWN_WRAPPER_CUSTOM
+build	Build libtruth_core.so	2025-10-16T21:33:33.1510388Z   CC_KNOWN_WRAPPER_CUSTOM = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1510746Z   RUSTC_WRAPPER = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1511141Z   cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+build	Build libtruth_core.so	2025-10-16T21:33:33.1512253Z   cargo:warning=Compiler family detection failed due to error: ToolNotFound: failed to find tool "aarch64-linux-android29-clang": No such file or directory (os error 2)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1513607Z   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+build	Build libtruth_core.so	2025-10-16T21:33:33.1514093Z   CRATE_CC_NO_DEFAULTS = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1514446Z   DEBUG = Some(false)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1514787Z   cargo:rerun-if-env-changed=CFLAGS
+build	Build libtruth_core.so	2025-10-16T21:33:33.1515155Z   CFLAGS = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1515485Z   cargo:rerun-if-env-changed=TARGET_CFLAGS
+build	Build libtruth_core.so	2025-10-16T21:33:33.1515897Z   TARGET_CFLAGS = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1516325Z   cargo:rerun-if-env-changed=CFLAGS_aarch64_linux_android
+build	Build libtruth_core.so	2025-10-16T21:33:33.1516853Z   CFLAGS_aarch64_linux_android = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1517771Z   cargo:rerun-if-env-changed=CFLAGS_aarch64-linux-android
+build	Build libtruth_core.so	2025-10-16T21:33:33.1518317Z   CFLAGS_aarch64-linux-android = None
+build	Build libtruth_core.so	2025-10-16T21:33:33.1518608Z 
+build	Build libtruth_core.so	2025-10-16T21:33:33.1518726Z   --- stderr
+build	Build libtruth_core.so	2025-10-16T21:33:33.1518905Z 
+build	Build libtruth_core.so	2025-10-16T21:33:33.1518913Z 
+build	Build libtruth_core.so	2025-10-16T21:33:33.1519454Z   error occurred in cc-rs: failed to find tool "aarch64-linux-android29-clang": No such file or directory (os error 2)
+build	Build libtruth_core.so	2025-10-16T21:33:33.1520163Z 
+build	Build libtruth_core.so	2025-10-16T21:33:33.1520176Z 
+build	Build libtruth_core.so	2025-10-16T21:33:33.1520659Z [1m[33mwarning[0m[1m:[0m build failed, waiting for other jobs to finish...
+build	Build libtruth_core.so	2025-10-16T21:33:35.4580937Z ##[error]Process completed with exit code 101.
+build	Post Setup Java	﻿2025-10-16T21:33:35.4656305Z Post job cleanup.
+build	Post Checkout	﻿2025-10-16T21:33:35.6424201Z Post job cleanup.
+build	Post Checkout	2025-10-16T21:33:35.7381269Z [command]/usr/bin/git version
+build	Post Checkout	2025-10-16T21:33:35.7420257Z git version 2.51.0
+build	Post Checkout	2025-10-16T21:33:35.7465114Z Temporarily overriding HOME='/home/runner/work/_temp/896a3bcb-37f0-4293-b27e-d2666b61fc27' before making global git config changes
+build	Post Checkout	2025-10-16T21:33:35.7466191Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Checkout	2025-10-16T21:33:35.7470951Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/truth-android-client/truth-android-client
+build	Post Checkout	2025-10-16T21:33:35.7510967Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Checkout	2025-10-16T21:33:35.7546110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Checkout	2025-10-16T21:33:35.7787646Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Checkout	2025-10-16T21:33:35.7810504Z http.https://github.com/.extraheader
+build	Post Checkout	2025-10-16T21:33:35.7823932Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	Post Checkout	2025-10-16T21:33:35.7855492Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Complete job	﻿2025-10-16T21:33:35.8203229Z Cleaning up orphan processes
