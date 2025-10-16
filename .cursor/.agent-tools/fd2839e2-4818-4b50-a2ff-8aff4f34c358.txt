@@ -1,0 +1,655 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  * Install Android SDK and NDK
+  * Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  * Add Android targets
+  * Cache Cargo
+  * Cache Gradle
+  * Make gradlew executable
+  * Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push less than a minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  * Build libtruth_core.so
+  * Build Debug APK
+  * Upload build artifacts
+  * ✅ Done
+  * Post Cache Gradle
+  * Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  X Build libtruth_core.so
+  - Build Debug APK
+  - Upload build artifacts
+  - ✅ Done
+  - Post Cache Gradle
+  - Post Cache Cargo
+  * Post Setup Java
+  * Post Checkout
+X release/ci-build-run Build Android Client · 18575389705
+Triggered via push about 1 minute ago
+
+JOBS
+X build in 1m32s (ID 52959321149)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup Java
+  ✓ Install Android SDK and NDK
+  ✓ Setup Rust
+  ✓ Add Android targets
+  ✓ Cache Cargo
+  ✓ Cache Gradle
+  ✓ Make gradlew executable
+  ✓ Prepare truth-core
+  X Build libtruth_core.so
+  - Build Debug APK
+  - Upload build artifacts
+  - ✅ Done
+  - Post Cache Gradle
+  - Post Cache Cargo
+  ✓ Post Setup Java
+  ✓ Post Checkout
+  ✓ Complete job
+
+ANNOTATIONS
+X Process completed with exit code 101.
+build: .github#494
+

@@ -1,0 +1,191 @@
+build	Set up job	﻿2025-10-16T21:30:14.5512832Z Current runner version: '2.328.0'
+build	Set up job	2025-10-16T21:30:14.5538414Z ##[group]Runner Image Provisioner
+build	Set up job	2025-10-16T21:30:14.5539488Z Hosted Compute Agent
+build	Set up job	2025-10-16T21:30:14.5540042Z Version: 20250912.392
+build	Set up job	2025-10-16T21:30:14.5540794Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+build	Set up job	2025-10-16T21:30:14.5541518Z Build Date: 2025-09-12T15:23:14Z
+build	Set up job	2025-10-16T21:30:14.5542085Z ##[endgroup]
+build	Set up job	2025-10-16T21:30:14.5542701Z ##[group]Operating System
+build	Set up job	2025-10-16T21:30:14.5543234Z Ubuntu
+build	Set up job	2025-10-16T21:30:14.5543688Z 24.04.3
+build	Set up job	2025-10-16T21:30:14.5544250Z LTS
+build	Set up job	2025-10-16T21:30:14.5544717Z ##[endgroup]
+build	Set up job	2025-10-16T21:30:14.5545161Z ##[group]Runner Image
+build	Set up job	2025-10-16T21:30:14.5545789Z Image: ubuntu-24.04
+build	Set up job	2025-10-16T21:30:14.5546291Z Version: 20250929.60.1
+build	Set up job	2025-10-16T21:30:14.5547246Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2025-10-16T21:30:14.5548805Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+build	Set up job	2025-10-16T21:30:14.5550117Z ##[endgroup]
+build	Set up job	2025-10-16T21:30:14.5551270Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2025-10-16T21:30:14.5553073Z Contents: read
+build	Set up job	2025-10-16T21:30:14.5553707Z Metadata: read
+build	Set up job	2025-10-16T21:30:14.5554280Z Packages: read
+build	Set up job	2025-10-16T21:30:14.5554737Z ##[endgroup]
+build	Set up job	2025-10-16T21:30:14.5557079Z Secret source: Actions
+build	Set up job	2025-10-16T21:30:14.5558076Z Prepare workflow directory
+build	Set up job	2025-10-16T21:30:14.5874968Z Prepare all required actions
+build	Set up job	2025-10-16T21:30:14.5913018Z Getting action download info
+build	Set up job	2025-10-16T21:30:14.9238805Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+build	Set up job	2025-10-16T21:30:15.1015930Z Download action repository 'actions/setup-java@v4' (SHA:c5195efecf7bdfc987ee8bae7a71cb8b11521c00)
+build	Set up job	2025-10-16T21:30:15.4688910Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:5d458579430fc14a04a08a1e7d3694f545e91ce6)
+build	Set up job	2025-10-16T21:30:15.5874929Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+build	Set up job	2025-10-16T21:30:15.6921292Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	Set up job	2025-10-16T21:30:15.9549795Z Complete job name: build
+build	Checkout	﻿2025-10-16T21:30:16.0348969Z ##[group]Run actions/checkout@v4
+build	Checkout	2025-10-16T21:30:16.0350342Z with:
+build	Checkout	2025-10-16T21:30:16.0350981Z   submodules: true
+build	Checkout	2025-10-16T21:30:16.0351742Z   repository: ekwator/truth-android-client
+build	Checkout	2025-10-16T21:30:16.0352910Z   token: ***
+build	Checkout	2025-10-16T21:30:16.0353546Z   ssh-strict: true
+build	Checkout	2025-10-16T21:30:16.0354202Z   ssh-user: git
+build	Checkout	2025-10-16T21:30:16.0354874Z   persist-credentials: true
+build	Checkout	2025-10-16T21:30:16.0355635Z   clean: true
+build	Checkout	2025-10-16T21:30:16.0356329Z   sparse-checkout-cone-mode: true
+build	Checkout	2025-10-16T21:30:16.0357168Z   fetch-depth: 1
+build	Checkout	2025-10-16T21:30:16.0357828Z   fetch-tags: false
+build	Checkout	2025-10-16T21:30:16.0358513Z   show-progress: true
+build	Checkout	2025-10-16T21:30:16.0359347Z   lfs: false
+build	Checkout	2025-10-16T21:30:16.0360002Z   set-safe-directory: true
+build	Checkout	2025-10-16T21:30:16.0360979Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.1436839Z Syncing repository: ekwator/truth-android-client
+build	Checkout	2025-10-16T21:30:16.1439599Z ##[group]Getting Git version info
+build	Checkout	2025-10-16T21:30:16.1441055Z Working directory is '/home/runner/work/truth-android-client/truth-android-client'
+build	Checkout	2025-10-16T21:30:16.1442971Z [command]/usr/bin/git version
+build	Checkout	2025-10-16T21:30:16.1517112Z git version 2.51.0
+build	Checkout	2025-10-16T21:30:16.1544597Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.1561620Z Temporarily overriding HOME='/home/runner/work/_temp/f20ccec6-76c8-454c-be27-f7b2cd29da13' before making global git config changes
+build	Checkout	2025-10-16T21:30:16.1565820Z Adding repository directory to the temporary git global config as a safe directory
+build	Checkout	2025-10-16T21:30:16.1575437Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/truth-android-client/truth-android-client
+build	Checkout	2025-10-16T21:30:16.1611878Z Deleting the contents of '/home/runner/work/truth-android-client/truth-android-client'
+build	Checkout	2025-10-16T21:30:16.1615387Z ##[group]Initializing the repository
+build	Checkout	2025-10-16T21:30:16.1620838Z [command]/usr/bin/git init /home/runner/work/truth-android-client/truth-android-client
+build	Checkout	2025-10-16T21:30:16.1735385Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	Checkout	2025-10-16T21:30:16.1737495Z hint: is subject to change. To configure the initial branch name to use in all
+build	Checkout	2025-10-16T21:30:16.1739731Z hint: of your new repositories, which will suppress this warning, call:
+build	Checkout	2025-10-16T21:30:16.1741198Z hint:
+build	Checkout	2025-10-16T21:30:16.1742617Z hint: 	git config --global init.defaultBranch <name>
+build	Checkout	2025-10-16T21:30:16.1744577Z hint:
+build	Checkout	2025-10-16T21:30:16.1746271Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	Checkout	2025-10-16T21:30:16.1749292Z hint: 'development'. The just-created branch can be renamed via this command:
+build	Checkout	2025-10-16T21:30:16.1751497Z hint:
+build	Checkout	2025-10-16T21:30:16.1752669Z hint: 	git branch -m <name>
+build	Checkout	2025-10-16T21:30:16.1754038Z hint:
+build	Checkout	2025-10-16T21:30:16.1755824Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	Checkout	2025-10-16T21:30:16.1759498Z Initialized empty Git repository in /home/runner/work/truth-android-client/truth-android-client/.git/
+build	Checkout	2025-10-16T21:30:16.1762828Z [command]/usr/bin/git remote add origin https://github.com/ekwator/truth-android-client
+build	Checkout	2025-10-16T21:30:16.1792355Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.1794452Z ##[group]Disabling automatic garbage collection
+build	Checkout	2025-10-16T21:30:16.1796404Z [command]/usr/bin/git config --local gc.auto 0
+build	Checkout	2025-10-16T21:30:16.1826721Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.1828727Z ##[group]Setting up auth
+build	Checkout	2025-10-16T21:30:16.1834561Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Checkout	2025-10-16T21:30:16.1867450Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Checkout	2025-10-16T21:30:16.2210207Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Checkout	2025-10-16T21:30:16.2241204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Checkout	2025-10-16T21:30:16.2468463Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Checkout	2025-10-16T21:30:16.2514487Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.2516602Z ##[group]Fetching the repository
+build	Checkout	2025-10-16T21:30:16.2525666Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6b166f591201096838bb4c360d85a655b644b9ae:refs/remotes/origin/release/ci-build-run
+build	Checkout	2025-10-16T21:30:16.4341016Z From https://github.com/ekwator/truth-android-client
+build	Checkout	2025-10-16T21:30:16.4344072Z  * [new ref]         6b166f591201096838bb4c360d85a655b644b9ae -> origin/release/ci-build-run
+build	Checkout	2025-10-16T21:30:16.4373228Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.4374825Z ##[group]Determining the checkout info
+build	Checkout	2025-10-16T21:30:16.4376387Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.4380556Z [command]/usr/bin/git sparse-checkout disable
+build	Checkout	2025-10-16T21:30:16.4418939Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	Checkout	2025-10-16T21:30:16.4445879Z ##[group]Checking out the ref
+build	Checkout	2025-10-16T21:30:16.4449987Z [command]/usr/bin/git checkout --progress --force -B release/ci-build-run refs/remotes/origin/release/ci-build-run
+build	Checkout	2025-10-16T21:30:16.4534252Z Switched to a new branch 'release/ci-build-run'
+build	Checkout	2025-10-16T21:30:16.4536879Z branch 'release/ci-build-run' set up to track 'origin/release/ci-build-run'.
+build	Checkout	2025-10-16T21:30:16.4544084Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.4546066Z ##[group]Setting up auth for fetching submodules
+build	Checkout	2025-10-16T21:30:16.4549217Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Checkout	2025-10-16T21:30:16.4585132Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+build	Checkout	2025-10-16T21:30:16.4614393Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+build	Checkout	2025-10-16T21:30:16.4644600Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-3940389@github.com:
+build	Checkout	2025-10-16T21:30:16.4670777Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.4672657Z ##[group]Fetching submodules
+build	Checkout	2025-10-16T21:30:16.4674213Z [command]/usr/bin/git submodule sync
+build	Checkout	2025-10-16T21:30:16.4897741Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1
+build	Checkout	2025-10-16T21:30:16.5118676Z [command]/usr/bin/git submodule foreach git config --local gc.auto 0
+build	Checkout	2025-10-16T21:30:16.5340160Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.5341713Z ##[group]Persisting credentials for submodules
+build	Checkout	2025-10-16T21:30:16.5416870Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+build	Checkout	2025-10-16T21:30:16.5579612Z [command]/usr/bin/git submodule foreach sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+build	Checkout	2025-10-16T21:30:16.5816036Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+build	Checkout	2025-10-16T21:30:16.6057578Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'org-3940389@github.com:'
+build	Checkout	2025-10-16T21:30:16.6286834Z ##[endgroup]
+build	Checkout	2025-10-16T21:30:16.6325155Z [command]/usr/bin/git log -1 --format=%H
+build	Checkout	2025-10-16T21:30:16.6348949Z 6b166f591201096838bb4c360d85a655b644b9ae
+build	Setup Java	﻿2025-10-16T21:30:16.6672638Z ##[group]Run actions/setup-java@v4
+build	Setup Java	2025-10-16T21:30:16.6673516Z with:
+build	Setup Java	2025-10-16T21:30:16.6674104Z   distribution: temurin
+build	Setup Java	2025-10-16T21:30:16.6674815Z   java-version: 17
+build	Setup Java	2025-10-16T21:30:16.6675463Z   java-package: jdk
+build	Setup Java	2025-10-16T21:30:16.6676124Z   check-latest: false
+build	Setup Java	2025-10-16T21:30:16.6676798Z   server-id: github
+build	Setup Java	2025-10-16T21:30:16.6677484Z   server-username: GITHUB_ACTOR
+build	Setup Java	2025-10-16T21:30:16.6678300Z   server-password: GITHUB_TOKEN
+build	Setup Java	2025-10-16T21:30:16.6679286Z   overwrite-settings: true
+build	Setup Java	2025-10-16T21:30:16.6680047Z   job-status: success
+build	Setup Java	2025-10-16T21:30:16.6680962Z   token: ***
+build	Setup Java	2025-10-16T21:30:16.6681602Z ##[endgroup]
+build	Setup Java	2025-10-16T21:30:16.8609300Z ##[group]Installed distributions
+build	Setup Java	2025-10-16T21:30:16.8960947Z Resolved Java 17.0.16+8 from tool-cache
+build	Setup Java	2025-10-16T21:30:16.8962551Z Setting Java 17.0.16+8 as the default
+build	Setup Java	2025-10-16T21:30:16.8974741Z Creating toolchains.xml for JDK version 17 from temurin
+build	Setup Java	2025-10-16T21:30:16.9050585Z Writing to /home/runner/.m2/toolchains.xml
+build	Setup Java	2025-10-16T21:30:16.9051986Z 
+build	Setup Java	2025-10-16T21:30:16.9052741Z Java configuration:
+build	Setup Java	2025-10-16T21:30:16.9054128Z   Distribution: temurin
+build	Setup Java	2025-10-16T21:30:16.9055578Z   Version: 17.0.16+8
+build	Setup Java	2025-10-16T21:30:16.9058672Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Java	2025-10-16T21:30:16.9060533Z 
+build	Setup Java	2025-10-16T21:30:16.9061741Z ##[endgroup]
+build	Setup Java	2025-10-16T21:30:16.9075940Z Creating settings.xml with server-id: github
+build	Setup Java	2025-10-16T21:30:16.9077578Z Writing to /home/runner/.m2/settings.xml
+build	Install Android SDK and NDK	﻿2025-10-16T21:30:16.9207877Z ##[group]Run set -euo pipefail
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9208857Z [36;1mset -euo pipefail[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9210121Z [36;1mexport ANDROID_SDK_ROOT="/usr/local/lib/android/sdk"[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9211346Z [36;1mmkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9212380Z [36;1mcd "$ANDROID_SDK_ROOT"[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9213472Z [36;1m# Install/refresh commandline-tools (12266719)[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9215441Z [36;1mcurl -fsSL -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-12266719_latest.zip[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9217353Z [36;1mrm -rf cmdline-tools/latest || true[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9218435Z [36;1munzip -o -q cmdline-tools.zip -d cmdline-tools[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9220010Z [36;1mmv -f cmdline-tools/cmdline-tools "$ANDROID_SDK_ROOT/cmdline-tools/latest"[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9221355Z [36;1mrm -f cmdline-tools.zip[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9222356Z [36;1m# Accept licenses and install required packages[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9224177Z [36;1myes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9225870Z [36;1myes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9227040Z [36;1m  "platform-tools" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9227841Z [36;1m  "platforms;android-34" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9228696Z [36;1m  "build-tools;35.0.0" \[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9229627Z [36;1m  "ndk;26.1.10909125"[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9230484Z [36;1m# Export NDK paths for downstream tools[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9231657Z [36;1mecho "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9232942Z [36;1mecho "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9234352Z [36;1mecho "ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9235975Z [36;1mecho "ANDROID_NDK_ROOT=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9237513Z [36;1mecho "NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV[0m
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9278543Z shell: /usr/bin/bash -e {0}
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9279670Z env:
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9280627Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9282236Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Install Android SDK and NDK	2025-10-16T21:30:16.9283484Z ##[endgroup]
+build	Install Android SDK and NDK	2025-10-16T21:30:26.8839521Z yes: standard output: Broken pipe
+build	Install Android SDK and NDK	2025-10-16T21:30:26.8859639Z ##[error]Process completed with exit code 1.
+build	Post Setup Java	﻿2025-10-16T21:30:26.9006201Z Post job cleanup.
+build	Post Checkout	﻿2025-10-16T21:30:27.0731039Z Post job cleanup.
+build	Post Checkout	2025-10-16T21:30:27.1725601Z [command]/usr/bin/git version
+build	Post Checkout	2025-10-16T21:30:27.1761741Z git version 2.51.0
+build	Post Checkout	2025-10-16T21:30:27.1805396Z Temporarily overriding HOME='/home/runner/work/_temp/90747ffd-438c-4f67-be9d-ae2440aa7e3a' before making global git config changes
+build	Post Checkout	2025-10-16T21:30:27.1806821Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Checkout	2025-10-16T21:30:27.1812287Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/truth-android-client/truth-android-client
+build	Post Checkout	2025-10-16T21:30:27.1847037Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Checkout	2025-10-16T21:30:27.1879834Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Checkout	2025-10-16T21:30:27.2102724Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Checkout	2025-10-16T21:30:27.2123477Z http.https://github.com/.extraheader
+build	Post Checkout	2025-10-16T21:30:27.2136343Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	Post Checkout	2025-10-16T21:30:27.2166593Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Complete job	﻿2025-10-16T21:30:27.2488750Z Cleaning up orphan processes
