@@ -25,8 +25,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          api-levels: 34
-          ndk-version: 26.1.10909125
+          packages: |
+            platform-tools
+            platforms;android-34
+            build-tools;35.0.0
+            ndk;26.1.10909125
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
@@ -49,6 +52,15 @@ jobs:
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+
+      - name: Prepare truth-core
+        run: |
+          if [ ! -d truth-core ]; then
+            echo "truth-core directory not found; cloning..."
+            git clone --depth 1 https://github.com/ekwator/truth-training truth-core
+          else
+            echo "truth-core directory exists."
+          fi
 
       - name: Build libtruth_core.so
         run: |
