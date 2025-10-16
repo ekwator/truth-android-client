@@ -35,12 +35,13 @@ jobs:
           mv -f cmdline-tools/cmdline-tools "$ANDROID_SDK_ROOT/cmdline-tools/latest"
           rm -f cmdline-tools.zip
           # Accept licenses and install required packages
-          yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null
+          yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
             "platform-tools" \
             "platforms;android-34" \
+            "platforms;android-35" \
             "build-tools;35.0.0" \
-            "ndk;26.1.10909125"
+            "ndk;26.1.10909125" || true
           # Export NDK paths for downstream tools
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
           echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
