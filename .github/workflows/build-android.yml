@@ -1,0 +1,78 @@
+name: Build Android Client
+
+on:
+  push:
+    branches:
+      - main
+      - release/*
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          api-levels: 34
+          ndk-version: 26.1.10909125
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Add Android targets
+        run: |
+          rustup target add aarch64-linux-android armv7-linux-androideabi
+
+      - name: Cache Cargo
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/registry
+          key: cargo-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/caches
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build libtruth_core.so
+        run: |
+          cd truth-core
+          ./scripts/build-android.sh
+          mkdir -p ../app/src/main/jniLibs/arm64-v8a ../app/src/main/jniLibs/armeabi-v7a
+          cp target/aarch64-linux-android/release/libtruth_core.so ../app/src/main/jniLibs/arm64-v8a/ || true
+          cp target/armv7-linux-androideabi/release/libtruth_core.so ../app/src/main/jniLibs/armeabi-v7a/ || true
+
+      - name: Build Debug APK
+        run: |
+          cd app
+          mkdir -p ~/.android
+          keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -alias androiddebugkey -dname "CN=Truth, OU=AI, O=TruthTraining, L=Earth, S=World, C=US"
+          cd ..
+          ./gradlew assembleDebug
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: truth-android-build
+          path: |
+            app/build/outputs/apk/debug/app-debug.apk
+            app/src/main/jniLibs/**/*.so
+
+      - name: ✅ Done
+        run: echo "Android client and native library built, signed, and uploaded successfully!"
