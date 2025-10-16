@@ -6,6 +6,7 @@ import com.truth.training.client.data.network.dto.AuthRequest
 import com.truth.training.client.data.network.dto.AuthResponse
 import com.truth.training.client.data.network.dto.InfoResponse
 import com.truth.training.client.data.network.dto.StatsResponse
+import com.truth.training.client.data.network.dto.ApiStatus
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.ResponseBody
 import okhttp3.ResponseBody.Companion.toResponseBody
@@ -43,6 +44,10 @@ class MockTruthApi(private val context: Context) : TruthApi {
         val json = load("api/auth.json")
         val obj = Gson().fromJson(json, AuthResponse::class.java)
         return Response.success(obj)
+    }
+
+    override suspend fun recalcCollective(): Response<ApiStatus> {
+        return Response.success(ApiStatus(status = "ok"))
     }
 }
 

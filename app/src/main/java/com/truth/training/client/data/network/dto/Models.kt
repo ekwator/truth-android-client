@@ -1,5 +1,7 @@
 package com.truth.training.client.data.network.dto
 
+import com.google.gson.annotations.SerializedName
+
 data class AuthRequest(
     val email: String,
     val password: String
@@ -23,6 +25,16 @@ data class StatsResponse(
     val edges: Int?,
     val avgTrust: Double?,
     val updatedAt: String?
+)
+
+data class ApiStatus(
+    val status: String
+)
+
+data class TruthEvent(
+    // Коллективная оценка истины в диапазоне [0,1]; null, если ещё не вычислена
+    @SerializedName("collective_score")
+    val collectiveScore: Double? = null
 )
 
 
