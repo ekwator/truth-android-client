@@ -57,6 +57,16 @@ jobs:
           path: app/src/main/jniLibs/arm64-v8a
           if_no_artifact_found: fail
 
+      - name: Prepare libtruth_core.so
+        run: |
+          ARTIFACT_DIR=app/src/main/jniLibs/arm64-v8a
+          # проверяем, есть ли ZIP (если скачался артефакт)
+          if [ -f "$ARTIFACT_DIR/truth-android-build.zip" ]; then
+            unzip -o "$ARTIFACT_DIR/truth-android-build.zip" -d "$ARTIFACT_DIR"
+            # копируем сам .so в корень arm64-v8a
+            find "$ARTIFACT_DIR" -name "libtruth_core.so" -exec cp {} "$ARTIFACT_DIR/" \;
+          fi
+
       - name: Verify native library was downloaded
         run: test -f app/src/main/jniLibs/arm64-v8a/libtruth_core.so
 
