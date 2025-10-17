@@ -34,7 +34,7 @@ jobs:
           mkdir -p app/src/main/jniLibs/armeabi-v7a
 
       - name: Download latest libtruth_core.so from truth-training (build-android.yml)
-        id: download_so_1
+        id: download_so
         uses: dawidd6/action-download-artifact@v6
         continue-on-error: true
         with:
@@ -46,31 +46,12 @@ jobs:
           path: app/src/main/jniLibs
           if_no_artifact_found: warn
 
-      - name: Fallback - download from "Build Android Core" workflow
-        id: download_so_2
-        if: steps.download_so_1.outcome == 'failure'
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.TRUTH_TRAINING_TOKEN || github.token }}
-          workflow: Build Android Core
-          repo: ekwator/truth-training
-          workflow_conclusion: success
-          name: truth-android-build
-          path: app/src/main/jniLibs
-          if_no_artifact_found: fail
-
-      - name: Prepare libtruth_core.so for both architectures
+      - name: Verify libtruth_core.so exists for both architectures
         run: |
           for ARCH in arm64-v8a armeabi-v7a; do
-            DIR=app/src/main/jniLibs/$ARCH
-            # если скачан ZIP, распаковываем его
-            if [ -f "$DIR/truth-android-build.zip" ]; then
-              unzip -o "$DIR/truth-android-build.zip" -d "$DIR"
-            fi
-            # ищем .so для этой архитектуры
-            SO_FILE=$(find "$DIR" -name "libtruth_core.so" -print -quit)
-            if [ -z "$SO_FILE" ]; then
-              echo "libtruth_core.so not found in $DIR"
+            SO_FILE=app/src/main/jniLibs/$ARCH/libtruth_core.so
+            if [ ! -f "$SO_FILE" ]; then
+              echo "libtruth_core.so not found in $ARCH"
               exit 1
             else
               echo "libtruth_core.so is ready for $ARCH: $SO_FILE"
@@ -92,3 +73,4 @@ jobs:
             app/src/main/jniLibs/arm64-v8a/libtruth_core.so
             app/src/main/jniLibs/armeabi-v7a/libtruth_core.so
           if-no-files-found: error
+
