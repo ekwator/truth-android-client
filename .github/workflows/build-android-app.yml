@@ -28,8 +28,10 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Ensure jniLibs directory exists
-        run: mkdir -p app/src/main/jniLibs/arm64-v8a
+      - name: Ensure jniLibs directories exist
+        run: |
+          mkdir -p app/src/main/jniLibs/arm64-v8a
+          mkdir -p app/src/main/jniLibs/armeabi-v7a
 
       - name: Download latest libtruth_core.so from truth-training (build-android.yml)
         id: download_so_1
@@ -41,7 +43,7 @@ jobs:
           repo: ekwator/truth-training
           workflow_conclusion: success
           name: truth-android-build
-          path: app/src/main/jniLibs/arm64-v8a
+          path: app/src/main/jniLibs
           if_no_artifact_found: warn
 
       - name: Fallback - download from "Build Android Core" workflow
@@ -54,28 +56,26 @@ jobs:
           repo: ekwator/truth-training
           workflow_conclusion: success
           name: truth-android-build
-          path: app/src/main/jniLibs/arm64-v8a
+          path: app/src/main/jniLibs
           if_no_artifact_found: fail
 
-      - name: Prepare libtruth_core.so
+      - name: Prepare libtruth_core.so for both architectures
         run: |
-          ARTIFACT_DIR=app/src/main/jniLibs/arm64-v8a
-          # Если скачался ZIP, распаковываем
-          if [ -f "$ARTIFACT_DIR/truth-android-build.zip" ]; then
-            unzip -o "$ARTIFACT_DIR/truth-android-build.zip" -d "$ARTIFACT_DIR"
-            # Копируем .so в корень arm64-v8a
-            find "$ARTIFACT_DIR" -name "libtruth_core.so" -exec cp {} "$ARTIFACT_DIR/" \;
-          fi
-          # Если .so скачан напрямую (не ZIP), ничего не делаем
-          if [ ! -f "$ARTIFACT_DIR/libtruth_core.so" ]; then
-            echo "libtruth_core.so not found in $ARTIFACT_DIR"
-            exit 1
-          else
-            echo "libtruth_core.so is ready in $ARTIFACT_DIR"
-          fi
-
-      - name: Verify native library was downloaded
-        run: test -f app/src/main/jniLibs/arm64-v8a/libtruth_core.so
+          for ARCH in arm64-v8a armeabi-v7a; do
+            DIR=app/src/main/jniLibs/$ARCH
+            # если скачан ZIP, распаковываем его
+            if [ -f "$DIR/truth-android-build.zip" ]; then
+              unzip -o "$DIR/truth-android-build.zip" -d "$DIR"
+            fi
+            # ищем .so для этой архитектуры
+            SO_FILE=$(find "$DIR" -name "libtruth_core.so" -print -quit)
+            if [ -z "$SO_FILE" ]; then
+              echo "libtruth_core.so not found in $DIR"
+              exit 1
+            else
+              echo "libtruth_core.so is ready for $ARCH: $SO_FILE"
+            fi
+          done
 
       - name: Ensure Gradle permissions
         run: chmod +x ./gradlew
@@ -90,4 +90,5 @@ jobs:
           path: |
             app/build/outputs/apk/debug/app-debug.apk
             app/src/main/jniLibs/arm64-v8a/libtruth_core.so
+            app/src/main/jniLibs/armeabi-v7a/libtruth_core.so
           if-no-files-found: error
