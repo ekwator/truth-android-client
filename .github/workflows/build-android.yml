@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,13 +29,11 @@ jobs:
           export ANDROID_SDK_ROOT="/usr/local/lib/android/sdk"
           mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
           cd "$ANDROID_SDK_ROOT"
-          # Install/refresh commandline-tools (12266719)
           curl -fsSL -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-12266719_latest.zip
           rm -rf cmdline-tools/latest || true
           unzip -o -q cmdline-tools.zip -d cmdline-tools
           mv -f cmdline-tools/cmdline-tools "$ANDROID_SDK_ROOT/cmdline-tools/latest"
           rm -f cmdline-tools.zip
-          # Accept licenses and install required packages
           yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" \
             "platform-tools" \
@@ -42,7 +41,6 @@ jobs:
             "platforms;android-35" \
             "build-tools;35.0.0" \
             "ndk;26.1.10909125" || true
-          # Export NDK paths for downstream tools
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
           echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
           echo "ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/26.1.10909125" >> $GITHUB_ENV
@@ -74,13 +72,10 @@ jobs:
       - name: Prepare truth-core
         run: |
           if [ ! -d truth-core ]; then
-            echo "truth-core directory not found; cloning..."
             git clone --depth 1 https://github.com/ekwator/truth-training truth-core
-          else
-            echo "truth-core directory exists."
           fi
 
-      - name: Build libtruth_core.so
+      - name: Build libtruth_core.so for both architectures
         run: |
           cd truth-core
           export ANDROID_NDK_HOME="${ANDROID_NDK_HOME:-$ANDROID_SDK_ROOT/ndk/26.1.10909125}"
@@ -88,29 +83,42 @@ jobs:
           export NDK_HOME="$ANDROID_NDK_HOME"
           export PATH="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
           export API_LEVEL=34
-          # Configure C toolchains and Cargo linkers for both targets
+
           export CC_aarch64_linux_android="aarch64-linux-android$API_LEVEL-clang"
           export CC_armv7_linux_androideabi="armv7a-linux-androideabi$API_LEVEL-clang"
           export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER="$CC_aarch64_linux_android"
           export CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_LINKER="$CC_armv7_linux_androideabi"
 
-          # Run the project's build script (may build one or more targets)
           ./scripts/build-android.sh
 
-          # Explicitly build both Rust Android targets to ensure .so files exist
           cargo build --release --target aarch64-linux-android
           cargo build --release --target armv7-linux-androideabi
 
-          # Copy the resulting shared libraries into the Android project's jniLibs
           mkdir -p ../app/src/main/jniLibs/arm64-v8a ../app/src/main/jniLibs/armeabi-v7a
-          cp target/aarch64-linux-android/release/libtruth_core.so ../app/src/main/jniLibs/arm64-v8a/ || echo "arm64-v8a .so missing"
-          cp target/armv7-linux-androideabi/release/libtruth_core.so ../app/src/main/jniLibs/armeabi-v7a/ || echo "armeabi-v7a .so missing"
+
+          if [ -f target/aarch64-linux-android/release/libtruth_core.so ]; then
+            cp target/aarch64-linux-android/release/libtruth_core.so ../app/src/main/jniLibs/arm64-v8a/
+            echo "libtruth_core.so copied for arm64-v8a"
+          else
+            echo "ERROR: arm64-v8a .so missing"
+            exit 1
+          fi
+
+          if [ -f target/armv7-linux-androideabi/release/libtruth_core.so ]; then
+            cp target/armv7-linux-androideabi/release/libtruth_core.so ../app/src/main/jniLibs/armeabi-v7a/
+            echo "libtruth_core.so copied for armeabi-v7a"
+          else
+            echo "ERROR: armeabi-v7a .so missing"
+            exit 1
+          fi
 
       - name: Build Debug APK
         run: |
           cd app
           mkdir -p ~/.android
-          keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -alias androiddebugkey -dname "CN=Truth, OU=AI, O=TruthTraining, L=Earth, S=World, C=US"
+          keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android -keypass android \
+            -keyalg RSA -keysize 2048 -validity 10000 -alias androiddebugkey \
+            -dname "CN=Truth, OU=AI, O=TruthTraining, L=Earth, S=World, C=US"
           cd ..
           ./gradlew assembleDebug
 
@@ -119,6 +127,13 @@ jobs:
         with:
           name: truth-android-build
           path: |
+            app/build/outputs/apk/debug/app-debug.apk
+            app/src/main/jniLibs/arm64-v8a/libtruth_core.so
+            app/src/main/jniLibs/armeabi-v7a/libtruth_core.so
+
+      - name: ✅ Done
+        run: echo "Android client and native libraries built successfully for both architectures!"
+
             app/build/outputs/apk/debug/app-debug.apk
             app/src/main/jniLibs/**/*.so
 
